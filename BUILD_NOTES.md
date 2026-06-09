@@ -137,7 +137,7 @@ Root directory: /
 Node version: 22.16.0
 ```
 
-The repo includes `wrangler.jsonc` with Pages output and observability settings.
+The repo includes `wrangler.jsonc` with the Pages output directory. Workers-only settings such as `observability` do not belong in this static Pages config.
 
 Test the Cloudflare preview URL before pointing `mobilervdetailers.com` or `www.mobilervdetailers.com` at the new site.
 

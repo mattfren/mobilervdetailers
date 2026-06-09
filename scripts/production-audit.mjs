@@ -147,11 +147,12 @@ if (!existsSync(wranglerPath)) {
 } else {
   const wranglerText = readFileSync(wranglerPath, "utf8");
   for (const required of [
-    '"pages_build_output_dir": "dist"',
-    '"observability"',
-    '"invocation_logs": true'
+    '"pages_build_output_dir": "dist"'
   ]) {
     if (!wranglerText.includes(required)) fail(`wrangler.jsonc missing ${required}.`);
+  }
+  if (wranglerText.includes('"observability"')) {
+    fail("wrangler.jsonc must not include observability; Cloudflare Pages rejects that field.");
   }
 }
 

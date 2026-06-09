@@ -48,7 +48,7 @@ All customer-facing action links live in `src/data/site.ts`.
 - Payment: external invoice/payment portal only after a quote or invoice is confirmed
 - Social/review links: Facebook, Instagram, Yelp, Google Business, Google Reviews
 
-Cloudflare runtime/deployment settings live in `wrangler.jsonc`.
+Cloudflare Pages output settings live in `wrangler.jsonc`. Keep Workers-only settings such as `observability` out of this static Pages config.
 
 ## Launch Guardrails
 
