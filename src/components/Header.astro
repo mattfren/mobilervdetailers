@@ -1,0 +1,68 @@
+---
+import { getQuoteAction, site } from "../data/site";
+
+const currentPath = Astro.url.pathname;
+const normalizePath = (path: string) => (path === "/" ? "/" : path.replace(/\/$/, ""));
+const quoteAction = getQuoteAction();
+---
+
+<header class="site-header" data-site-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Mobile RV Detailers home">
+      <img src={site.images.logo} alt="Mobile RV Detailers" width="164" height="50" />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {site.nav.map((item) => (
+        <a class:list={["nav-link", normalizePath(currentPath) === normalizePath(item.href) && "is-active"]} href={item.href}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href={site.phoneHref}>{site.phone}</a>
+      <a
+        class="btn btn-small btn-red"
+        href={quoteAction.href}
+        target={quoteAction.external ? "_blank" : undefined}
+        rel={quoteAction.external ? "noreferrer" : undefined}
+      >
+        {quoteAction.label}
+      </a>
+    </div>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="container mobile-nav-inner">
+      <a href="/">Home</a>
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href="/book">Book</a>
+      <a class="mobile-nav-call" href={site.phoneHref}>Call {site.phone}</a>
+      <a
+        class="btn btn-red"
+        href={quoteAction.href}
+        target={quoteAction.external ? "_blank" : undefined}
+        rel={quoteAction.external ? "noreferrer" : undefined}
+      >
+        {quoteAction.label}
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const menu = document.querySelector("[data-mobile-menu]");
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    menu?.toggleAttribute("data-open", !isOpen);
+  });
+</script>

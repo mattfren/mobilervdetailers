@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/CTASection.astro";
+import { localBusinessJsonLd, site } from "../data/site";
+
+const title = "Mobile RV Detailing Service Areas | Canton, TX";
+const description =
+  "Mobile RV Detailers is based in Canton, TX and provides quote-based mobile RV exterior care at homes, RV parks, storage facilities, and parked RV locations.";
+
+const localRadiusMeters = 35000;
+const extendedRadiusMeters = 70000;
+---
+
+<BaseLayout title={title} description={description} path="/service-areas" jsonLd={localBusinessJsonLd()}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Service areas</p>
+      <h1>Canton, TX-based mobile RV detailing.</h1>
+      <p>
+        Mobile RV Detailers plans service around two approximate drive-time zones from Canton: a local no-travel-fee zone and an extended travel-fee zone.
+        Customer-location water and electricity are currently required.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container service-map-section">
+      <div class="section-kicker">
+        <p class="eyebrow">Service range guide</p>
+        <h2>Two travel zones from Canton.</h2>
+        <p class="lead">
+          This guide is based on approximate drive time, not a fixed mileage circle. Final availability and travel fee are confirmed during quote.
+        </p>
+      </div>
+
+      <div class="service-map-layout">
+        <div class="service-map-card service-map-card-live" aria-label="Interactive service map centered on Canton, TX">
+          <div
+            class="service-map-canvas"
+            data-service-map
+            data-lat={site.mapCenter.lat}
+            data-lng={site.mapCenter.lng}
+            data-local-radius={localRadiusMeters}
+            data-extended-radius={extendedRadiusMeters}
+          ></div>
+          <div class="service-map-legend">
+            <strong>Approximate guide</strong>
+            <span><i class="legend-local"></i> 30 min / no travel fee</span>
+            <span><i class="legend-extended"></i> 1 hr / travel fee</span>
+          </div>
+        </div>
+
+        <div class="zone-card-stack">
+          {site.travelZones.map((zone) => (
+            <article class="zone-card">
+              <p>{zone.label}</p>
+              <h3>{zone.time}</h3>
+              <strong>{zone.fee}</strong>
+              <span>{zone.note}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <p class="map-disclaimer">
+        The map is for orientation only. Travel times are approximate from Canton, TX, and final availability and travel fee depend on the route, RV location, access, weather, schedule, and requested service scope.
+        <a href={site.mapSearchUrl} target="_blank" rel="noreferrer">Open Canton in Google Maps.</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">Where service can happen</p>
+        <h2>Designed for parked RV service.</h2>
+      </div>
+      <div class="process-grid">
+        <article class="process-card">
+          <h3>Home</h3>
+          <p>For owners who keep the RV at home and have water, electricity, access, and working space available.</p>
+        </article>
+        <article class="process-card">
+          <h3>RV park</h3>
+          <p>Service can be planned at an RV park when access, water, electricity, and site rules allow mobile washing/detailing.</p>
+        </article>
+        <article class="process-card">
+          <h3>Storage facility</h3>
+          <p>Storage work should be coordinated around gate access, water, electricity, working space, and facility requirements.</p>
+        </article>
+        <article class="process-card">
+          <h3>Campground</h3>
+          <p>Campground service depends on access, rules, weather, water, electricity, and available working space.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Not sure if your location is in range?" text="Send the RV location, parking details, and service needs so the route, travel zone, and scope can be confirmed." />
+</BaseLayout>
+
+<script>
+  import L from "leaflet";
+  import "leaflet/dist/leaflet.css";
+
+  const mapElement = document.querySelector<HTMLElement>("[data-service-map]");
+
+  if (mapElement) {
+    const lat = Number(mapElement.dataset.lat);
+    const lng = Number(mapElement.dataset.lng);
+    const localRadius = Number(mapElement.dataset.localRadius);
+    const extendedRadius = Number(mapElement.dataset.extendedRadius);
+    const center: [number, number] = [lat, lng];
+
+    const map = L.map(mapElement, {
+      attributionControl: true,
+      scrollWheelZoom: false
+    }).setView(center, 9);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    const extendedCircle = L.circle(center, {
+      radius: extendedRadius,
+      color: "#C4893A",
+      dashArray: "9 8",
+      fillColor: "#C4893A",
+      fillOpacity: 0.1,
+      interactive: false,
+      weight: 4
+    }).addTo(map);
+
+    L.circle(center, {
+      radius: localRadius,
+      color: "#D71920",
+      fillColor: "#D71920",
+      fillOpacity: 0.12,
+      interactive: false,
+      weight: 4
+    }).addTo(map);
+
+    L.circleMarker(center, {
+      radius: 7,
+      color: "#ffffff",
+      fillColor: "#D71920",
+      fillOpacity: 1,
+      interactive: false,
+      weight: 3
+    }).addTo(map);
+
+    setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(extendedCircle.getBounds(), { padding: [28, 28] });
+    }, 0);
+  }
+</script>

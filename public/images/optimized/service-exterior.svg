@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Exterior RV wash placeholder</title>
+  <desc id="desc">Temporary placeholder for an exterior RV wash photo.</desc>
+  <rect width="900" height="620" fill="#101419"/>
+  <path d="M120 342h520c44 0 80-36 80-80V150H230c-61 0-110 49-110 110v82Z" fill="#F7F5EF"/>
+  <path d="M170 195h162v96H155v-81c0-8 7-15 15-15Zm205 0h160v96H375Zm202 0h99v96h-99Z" fill="#18202A"/>
+  <path d="M120 366h600v26H120Z" fill="#D71920"/>
+  <circle cx="242" cy="438" r="45" fill="#07090B"/>
+  <circle cx="586" cy="438" r="45" fill="#07090B"/>
+  <path d="M742 182c44 38 43 92-3 130M777 145c76 67 75 159-4 235" fill="none" stroke="#C4893A" stroke-width="18" stroke-linecap="round"/>
+  <text x="72" y="560" fill="#F8F7F2" font-family="Arial, sans-serif" font-size="34" font-weight="800">EXTERIOR WASH PHOTO NEEDED</text>
+</svg>

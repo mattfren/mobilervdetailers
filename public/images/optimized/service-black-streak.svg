@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Black streak removal placeholder</title>
+  <desc id="desc">Temporary placeholder for black streak removal proof photo.</desc>
+  <rect width="900" height="620" fill="#171B21"/>
+  <rect x="118" y="148" width="664" height="300" rx="8" fill="#F7F5EF"/>
+  <path d="M188 218h120v84H188Zm170 0h120v84H358Zm170 0h120v84H528Z" fill="#11161C"/>
+  <path d="M215 150c24 78 18 146-20 205M343 150c30 87 23 161-24 223M636 150c24 71 19 133-15 187" fill="none" stroke="#323943" stroke-width="18" stroke-linecap="round"/>
+  <path d="M118 402h664v46H118Z" fill="#D71920"/>
+  <text x="74" y="560" fill="#F8F7F2" font-family="Arial, sans-serif" font-size="34" font-weight="800">BLACK STREAK PROOF PHOTO NEEDED</text>
+</svg>

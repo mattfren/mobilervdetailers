@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/CTASection.astro";
+import { localBusinessJsonLd } from "../data/site";
+
+const title = "About Mobile RV Detailers | Canton, TX RV Exterior Care";
+const description =
+  "Learn about Mobile RV Detailers, the Canton, TX family business founded by Carl and Jana Fields to make RV detailing easier for local owners.";
+---
+
+<BaseLayout title={title} description={description} path="/about" jsonLd={localBusinessJsonLd()}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h1>Premium mobile RV care based in Canton, TX.</h1>
+      <p>
+        Mobile RV Detailers is a family business built around a simple customer need:
+        careful RV care without forcing owners to move the rig.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div class="rich-text">
+        <h2>Started from a real RV owner problem.</h2>
+        <p>
+          Mobile RV Detailers was founded in 2021 by Carl and Jana Fields after they bought their
+          first RV and had trouble finding someone to detail it. Out of necessity, they started
+          building an easier and more affordable way for RV owners to protect their investment.
+        </p>
+        <p>
+          What began as a personal need became a full-service mobile RV detailing family business
+          serving owners around Canton, TX and nearby communities.
+        </p>
+        <h2>A better way to care for a parked RV.</h2>
+        <p>
+          RVs are not ordinary vehicles. They have larger exterior surfaces, roof systems, awnings,
+          black streak patterns, road-film buildup, and parking constraints that require a different service mindset.
+        </p>
+        <p>
+          Mobile RV Detailers provides premium mobile RV exterior care
+          from a Canton, TX base, using a quote-first process and service planning around the customer&apos;s parked RV.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>Clear quote planning</h3>
+        <p>
+          Written details, photos, RV condition, access, route, and weather all help keep the service scope realistic before scheduling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">What to expect</p>
+        <h2>Professional, rugged, clean, RV-specific, and local.</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="process-card">
+          <h3>Premium care</h3>
+          <p>Designed for owners who treat their RV as a serious investment.</p>
+        </article>
+        <article class="process-card">
+          <h3>Mobile service</h3>
+          <p>Built for home, storage facility, campground, RV park, and parked-RV service contexts.</p>
+        </article>
+        <article class="process-card">
+          <h3>Quote-first scope</h3>
+          <p>Photos, RV condition, access, and requested services drive the quote before scheduling.</p>
+        </article>
+        <article class="process-card">
+          <h3>Family business</h3>
+          <p>Founded by Carl and Jana Fields to make RV detailing easier and more practical for owners.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Send the RV and service-location details." text="Share the RV size, photos, location, and services needed so the quote can be planned clearly." />
+</BaseLayout>

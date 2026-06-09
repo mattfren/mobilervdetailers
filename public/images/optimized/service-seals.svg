@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Seals and gaskets placeholder</title>
+  <desc id="desc">Temporary placeholder for RV seals and gaskets care photo.</desc>
+  <rect width="900" height="620" fill="#0B0D10"/>
+  <rect x="195" y="116" width="510" height="354" rx="8" fill="#F7F5EF"/>
+  <rect x="267" y="172" width="210" height="216" rx="8" fill="#11161C"/>
+  <path d="M253 158h238v244H253Z" fill="none" stroke="#D71920" stroke-width="20"/>
+  <path d="M526 172h104v216H526Z" fill="#C4893A"/>
+  <circle cx="607" cy="280" r="13" fill="#0B0D10"/>
+  <text x="74" y="560" fill="#F8F7F2" font-family="Arial, sans-serif" font-size="34" font-weight="800">SEALS / GASKETS PHOTO NEEDED</text>
+</svg>

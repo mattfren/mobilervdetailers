@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GalleryGrid from "../components/GalleryGrid.astro";
+import CTASection from "../components/CTASection.astro";
+import { galleryItems } from "../data/gallery";
+import { localBusinessJsonLd, site } from "../data/site";
+
+const title = "RV Detailing Before & After Gallery | Mobile RV Detailers";
+const description =
+  "View Mobile RV Detailers before and after photos for RV exterior wash work, roof cleaning, awning cleaning, front-cap cleanup, wheel detail, and wax soap hand dry finish.";
+---
+
+<BaseLayout title={title} description={description} path="/gallery" jsonLd={localBusinessJsonLd()}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Gallery</p>
+      <h1>Before, after, and service proof from real RV work.</h1>
+      <p>
+        See exterior wash finish, before-and-after proof, roof cleaning, awning cleaning,
+        front-cap cleanup, wheel detail, and other RV exterior work.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container proof-grid">
+      <div class="proof-media">
+        <img src={site.images.proof} alt="Before and after RV exterior cleaning result from Mobile RV Detailers photos" width="1400" height="900" loading="lazy" />
+      </div>
+      <div>
+        <p class="eyebrow">Proof standard</p>
+        <h2>Real photos, realistic expectations.</h2>
+        <p class="lead">
+          Every RV is different, so photo review matters. These images show real exterior detail work
+          without promising the same outcome for every surface, stain, or condition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">Gallery</p>
+        <h2>RV detailing photos.</h2>
+        <p class="lead">Exterior wash, roof, awning, front-cap, wheel, and before-and-after work from Mobile RV Detailers.</p>
+      </div>
+      <GalleryGrid items={galleryItems} />
+    </div>
+  </section>
+
+  <CTASection title="Have photos of your RV condition?" text="Photos of the roof, front cap, black streaks, awnings, and full exterior help make the quote more accurate." />
+</BaseLayout>

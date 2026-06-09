@@ -1,0 +1,18 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+  chips?: string[];
+}
+
+const { chips = site.trustChips } = Astro.props;
+---
+
+<ul class="trust-chips" aria-label="Trust highlights">
+  {chips.map((chip) => (
+    <li>
+      <span aria-hidden="true"></span>
+      {chip}
+    </li>
+  ))}
+</ul>

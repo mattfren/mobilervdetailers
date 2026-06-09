@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import PackageCard from "../components/PackageCard.astro";
+import CTASection from "../components/CTASection.astro";
+import FAQ from "../components/FAQ.astro";
+import { faqs } from "../data/faqs";
+import { careClub, membershipPackages } from "../data/membership";
+import { packages, pricingDisclaimer } from "../data/packages";
+import { services } from "../data/services";
+import { faqJsonLd, getQuoteAction, localBusinessJsonLd, site } from "../data/site";
+
+const title = "RV Washing, Detail Packages & Care Club | Mobile RV Detailers";
+const description =
+  "Explore Mobile RV Detailers exterior wash packages, roof or awning care, Full Exterior Detail packages, and the RV Care Club membership in Canton, TX.";
+const quoteAction = getQuoteAction();
+
+const serviceSchema = services.map((service) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: service.title,
+  provider: {
+    "@type": "ProfessionalService",
+    name: site.name,
+    telephone: site.phone
+  },
+  areaServed: site.serviceAreas.join(", "),
+  description: service.summary
+}));
+---
+
+<BaseLayout title={title} description={description} path="/services" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs), ...serviceSchema]}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h1>RV exterior care that meets your rig where it is parked.</h1>
+      <p>
+        Mobile RV Detailers offers exterior washing, roof or awning care, black streak removal,
+        Full Exterior Detail packages, and RV Care Club membership for owners who want consistent RV care.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-dark membership-section">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">RV Care Club</p>
+        <h2>Stop spending $400-$900 every time your RV needs attention.</h2>
+        <p class="lead">
+          Join the Mobile RV Detailers Care Club and enjoy member discounts, annual inspections,
+          priority scheduling, and monthly service credits that build toward future detailing services.
+        </p>
+      </div>
+
+      <div class="membership-layout">
+        <div class="membership-package-grid">
+          {membershipPackages.map((item) => (
+            <article class="membership-card">
+              <p class="card-eyebrow">{item.eyebrow}</p>
+              <h3>{item.title}</h3>
+              <strong>{item.startingPrice}</strong>
+              <p>{item.summary}</p>
+              <ul>
+                {item.includes.map((include) => <li>{include}</li>)}
+              </ul>
+              {item.perFootPrice && <span>{item.perFootPrice}</span>}
+              <a href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>Get Quote</a>
+            </article>
+          ))}
+        </div>
+
+        <article class="care-club-card">
+          <p class="care-club-ribbon">{careClub.eyebrow}</p>
+          <div class="care-club-header">
+            <div>
+              <p class="card-eyebrow">Membership</p>
+              <h3>{careClub.title}</h3>
+              <strong>{careClub.startingPrice}</strong>
+            </div>
+            <p>Protect your RV. Save money. Travel with confidence.</p>
+          </div>
+          <p>{careClub.summary}</p>
+
+          <div class="care-club-columns">
+            <div>
+              <h4>Member benefits</h4>
+              <ul>
+                {careClub.benefits.map((benefit) => <li>{benefit}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h4>Membership pricing</h4>
+              <ul>
+                {careClub.pricing.map((price) => <li>{price}</li>)}
+              </ul>
+              <div class="savings-box">
+                <strong>{careClub.savingsExample.title}</strong>
+                <span>{careClub.savingsExample.retail}</span>
+                <span>{careClub.savingsExample.member}</span>
+                <b>{careClub.savingsExample.savings}</b>
+              </div>
+            </div>
+          </div>
+
+          <p class="care-club-note">
+            Your RV is one of your largest investments. The RV Care Club helps you keep it clean,
+            protected, and ready for your next trip without surprise expenses or last-minute scheduling headaches.
+          </p>
+          <p class="care-club-savings">{careClub.annualSavings}</p>
+          <a class="btn btn-red btn-large" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>Become a Member</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cards-grid">
+        {services.map((service) => <ServiceCard service={service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">Packages</p>
+        <h2>Choose the scope, then confirm the quote.</h2>
+        <p class="lead">{pricingDisclaimer}</p>
+      </div>
+      <div class="cards-grid package-grid">
+        {packages.map((item, index) => <PackageCard item={item} featured={index === 0} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">Quote inputs</p>
+        <h2>Photos and RV details make the quote stronger.</h2>
+        <p class="lead">
+          Share RV length, condition, service location, where it is parked, available water/electricity, and the exterior areas that need attention.
+        </p>
+      </div>
+      <div class="cards-grid">
+        <article class="info-card">
+          <h3>Condition matters</h3>
+          <p>Age, staining, roof buildup, awning condition, road film, and custom requests can change the scope and timing.</p>
+        </article>
+        <article class="info-card">
+          <h3>Utilities and access matter</h3>
+          <p>Mobile RV Detailers currently requires water and electricity at the customer location, plus permission for mobile washing/detailing where the RV is parked.</p>
+        </article>
+        <article class="info-card">
+          <h3>Photos matter</h3>
+          <p>Front cap, rear, both sides, roof if safely available, awning, wheels, and problem-area photos help prevent quote surprises.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-kicker center">
+        <p class="eyebrow">Service questions</p>
+        <h2>Answers before you request a quote.</h2>
+      </div>
+      <FAQ items={faqs.slice(0, 7)} />
+    </div>
+  </section>
+
+  <CTASection title="Ready to price the right RV detail?" text="Send the RV details and photos so the exterior care scope can be quoted accurately." />
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import { getQuoteAction, getTextAction } from "../data/site";
+
+interface Props {
+  title?: string;
+  text?: string;
+  dark?: boolean;
+}
+
+const {
+  title = "Protect the RV you worked hard for.",
+  text = "Send the RV details, location, and photos so Mobile RV Detailers can prepare a clear quote.",
+  dark = true
+} = Astro.props;
+
+const quoteAction = getQuoteAction();
+const textAction = getTextAction();
+---
+
+<section class:list={["cta-section", dark && "cta-section-dark"]}>
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">Quote-first exterior RV care</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-red btn-large" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
+      <a class="btn btn-ghost btn-large" href={textAction.href}>{textAction.label}</a>
+    </div>
+  </div>
+</section>

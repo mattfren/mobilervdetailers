@@ -1,0 +1,275 @@
+You are working in the Mobile RV Detailers website repository. Your goal is to make the entire website production-ready at a professional small-business standard. Treat this as a full launch-readiness pass, not a surface-level polish pass.
+
+Business context:
+
+Mobile RV Detailers is a mobile RV detailing and exterior RV care business based in Canton, Texas, serving East Texas. The site should feel trustworthy, local, clean, professional, and conversion-focused. The primary goal is to get qualified RV detailing leads to call, text, or submit the quote form with photos.
+
+Critical business rules:
+
+* Business name: Mobile RV Detailers
+* Phone: (903) 502-4242
+* Website/domain: mobilervdetailers.com
+* Base location: Canton, TX
+* Quote form: https://tally.so/r/xXvkqJ
+* Payment portal: https://pay.mobilervdetailers.com/
+* Hours: By appointment only
+* Service requires water and electricity at the customer location right now.
+* Site should not imply Mobile RV Detailers brings its own water or power.
+* Site should not say “licensed and insured” unless that already exists in verified site content.
+* Site should not promise guaranteed results, “like new” restoration, guaranteed stain removal, or guaranteed oxidation removal.
+* Site should not claim polish, buffing, ceramic coating, paint correction, gel coat restoration, heavy compounding, or full oxidation restoration.
+* Interior cleaning is not a standard package. It may be reviewed case by case only.
+
+Package rules:
+
+1. Exterior RV Wash
+
+   * Starting at $300
+   * Starting at $10/ft
+   * Standard exterior wash for dirt, dust, bugs, road film, and general buildup.
+
+2. Wash + Roof OR Awning
+
+   * Starting at $450
+   * Starting at $15/ft
+   * This package includes Exterior RV Wash plus either Roof Cleaning OR Awning Cleaning.
+   * It does not automatically include both roof and awning.
+
+3. Full Exterior Detail
+
+   * Starting at $600
+   * Starting at $15-$20/ft
+   * This includes Exterior RV Wash + Roof Cleaning + Awning Cleaning.
+   * It may also include deeper exterior cleaning, window detailing, bug/tar attention, black streak treatment when applicable, and final hand-dry finish.
+   * It does not include polishing, buffing, paint correction, ceramic coating, compounding, or full oxidation restoration.
+
+RV Care Club:
+
+* Up to 35 ft: $79/month
+* 36-45 ft: $99/month
+* Benefits may include service credits, 15% off detailing services, priority scheduling, annual roof/seal inspection, storm damage inspections, locked-in member pricing, and cancel anytime.
+* Do not over-explain legal terms. Keep membership language clean and owner-confirmed.
+
+Primary user conversion:
+
+Every major page should drive the user toward one of these actions:
+
+* Call Mobile RV Detailers
+* Text photos/details
+* Submit the quote form
+* Review packages
+* Understand service area and requirements
+
+Quote qualification language should clearly ask for:
+
+* Name
+* Phone
+* RV type
+* RV length
+* City/location
+* Service wanted
+* Current condition
+* Whether roof or awning cleaning is needed
+* Water availability
+* Electrical outlet availability
+* Permission for mobile washing/detailing at RV park, campground, or storage facility
+* Photos of front, back, both sides, roof if safely available, awning, wheels, and problem areas
+
+Current-condition wording should help users understand what to provide:
+“Tell us whether the RV has light dirt, heavy road film, bugs on the front, black streaks, roof buildup, mildew, mold, awning stains, tar, sap, chalking, fading, oxidation, or areas that have not been cleaned in a while.”
+
+Scope of work:
+
+Perform a full production-readiness audit and implementation pass across the entire website. Inspect every page, component, layout, form, link, CTA, image, SEO tag, schema block, responsive breakpoint, package description, pricing statement, and legal/disclaimer area.
+
+Do not assume the current site is correct. Verify it against the business rules above.
+
+Required implementation areas:
+
+1. Content accuracy
+
+* Remove or correct every outdated, conflicting, or risky statement.
+* Replace all “Wash + Roof & Awning” middle-package language with “Wash + Roof OR Awning.”
+* Ensure Full Exterior Detail is the only package that includes wash + roof + awning together.
+* Remove any claim that polishing, buffing, ceramic coating, paint correction, gel coat restoration, or oxidation restoration is offered.
+* Make water and electricity requirements clear.
+* Make site-permission requirements clear for RV parks, campgrounds, and storage facilities.
+* Ensure pricing is presented as starting pricing, not final guaranteed pricing.
+* Ensure final pricing depends on RV length, condition, location, access, utilities, site rules, weather, travel zone, requested service, and photos.
+* Avoid overpromising results.
+
+2. Conversion optimization
+
+* Every page should have clear CTAs above the fold and near the bottom.
+* Use direct CTAs like “Get a Quote,” “Call Now,” “Text Photos,” and “View Packages.”
+* Quote CTAs should link to https://tally.so/r/xXvkqJ.
+* Phone CTAs should use tel:+19035024242.
+* If SMS links exist, use sms:+19035024242 where appropriate.
+* Make the quote process obvious: details + photos → review → quote → scheduling.
+* Add or improve sections that reduce customer confusion before calling.
+
+3. Service pages and package clarity
+
+* Make packages easy to compare.
+* Clarify which package fits which customer.
+* Add concise “Best for” language.
+* Make the difference between Wash + Roof OR Awning and Full Exterior Detail impossible to misunderstand.
+* Make black streaks, bugs/tar, roof buildup, awning mildew, and condition issues clearly part of quote review.
+* Do not bury pricing.
+
+4. Trust and local presence
+
+* Strengthen local East Texas/Canton positioning without exaggerating.
+* Use “trusted” or “local” tone; avoid unsupported claims like “#1,” “best,” or “guaranteed.”
+* Add service-area language for local and extended zones if not already present.
+* Make it clear service is mobile and by appointment.
+* Add FAQs that answer practical customer questions.
+
+5. SEO and metadata
+
+* Audit and improve page titles, meta descriptions, canonical URLs, Open Graph tags, Twitter/X cards if present, favicon references, robots.txt, sitemap.xml, and structured data.
+* Add LocalBusiness / Service schema if appropriate.
+* Schema should not include unverified claims.
+* Ensure NAP consistency: Mobile RV Detailers, Canton TX, (903) 502-4242.
+* Use keywords naturally: mobile RV detailing, RV wash, RV roof cleaning, RV awning cleaning, black streak removal, RV detailing Canton TX, East Texas RV detailing.
+* Avoid keyword stuffing.
+
+6. Accessibility
+
+* Fix heading order.
+* Ensure buttons and links have accessible names.
+* Ensure images have useful alt text.
+* Ensure contrast is acceptable.
+* Ensure keyboard navigation works.
+* Ensure focus states are visible.
+* Ensure forms and embedded quote links are accessible.
+* Ensure no CTA relies only on color.
+
+7. Responsive design
+
+* Audit mobile, tablet, laptop, and desktop layouts.
+* Optimize for phone users first.
+* Ensure CTAs are easy to tap.
+* Avoid overcrowded cards.
+* Ensure package cards remain readable on small screens.
+* Ensure navigation is clean and not broken.
+* Ensure images do not overflow.
+* Ensure text does not wrap awkwardly.
+
+8. Performance
+
+* Run the build and any available lint/type checks.
+* Optimize images where possible without breaking quality.
+* Remove unused assets or dead code only when safe.
+* Avoid heavy scripts.
+* Ensure the site loads quickly and is not bloated.
+* Do not introduce unnecessary dependencies.
+
+9. Links and integrations
+
+* Verify all internal links.
+* Verify all external links.
+* Verify quote form links.
+* Verify phone links.
+* Verify payment portal links.
+* Payment portal should not be presented as something customers use before quote/invoice confirmation.
+* If social links exist, verify they are consistent and not broken.
+
+10. Legal, safety, and disclaimers
+
+* Add practical disclaimers where needed:
+
+  * Final pricing confirmed after review.
+  * Photos help but quote may change if condition differs.
+  * Weather may affect scheduling.
+  * Site must allow mobile washing/detailing.
+  * Water and electricity are required.
+  * Results depend on age, surface condition, buildup, staining, oxidation, and prior care.
+* Do not create unnecessary legal pages unless the site already has the structure or it is clearly useful.
+* Do not invent refund, deposit, cancellation, warranty, license, or insurance policies.
+
+11. Copy polish
+
+* Rewrite awkward, repetitive, generic, or AI-sounding text.
+* Keep copy clear, local, direct, and customer-friendly.
+* Use a professional but approachable tone.
+* Reduce fluff.
+* Prioritize clarity and conversion.
+
+12. Visual polish
+
+* Make spacing, card alignment, typography, buttons, package sections, and CTA blocks feel production-grade.
+* Ensure visual hierarchy is strong.
+* Ensure every section has a purpose.
+* Keep the design clean and simple.
+* Do not redesign into something unnecessarily complex unless required.
+
+13. Error prevention
+
+* Search the entire repo for these terms and fix them where they conflict:
+
+  * “Wash + Roof & Awning”
+  * “Wash + Roof and Awning”
+  * “polish”
+  * “buff”
+  * “ceramic”
+  * “paint correction”
+  * “oxidation restoration”
+  * “licensed”
+  * “insured”
+  * “guarantee”
+  * “bring our own water”
+  * “online booking”
+  * “customer account”
+  * “payment required”
+* It is acceptable for “polish,” “buff,” “ceramic,” and “oxidation restoration” to appear only in “not offered” disclaimers or FAQs.
+
+14. Final proofing
+
+* Run a full repo-wide spelling and wording pass.
+* Fix typos, inconsistent capitalization, awkward punctuation, and confusing package labels.
+* Ensure all “RV” usage is consistent.
+* Ensure “Full Exterior Detail” is used instead of vague “Full Detail” where clarity matters.
+* Ensure “Mow-bull R.V.” pronunciation is only used for voice assistant material, not public website copy unless intentionally included.
+
+Validation requirements:
+
+Run all available commands that make sense for this repo, such as:
+
+* npm install if needed
+* npm run lint
+* npm run typecheck
+* npm run build
+* npm run test if available
+* any Astro/Vite/Next/site-specific validation scripts present in package.json
+
+If a command fails because the script does not exist, note that clearly. If a command fails due to a real issue, fix it if within scope. If it cannot be fixed, document exactly why.
+
+Deliverables:
+
+1. Implement the production-ready website changes.
+2. Provide a clear final summary with:
+
+   * What pages/components were changed
+   * What business-rule corrections were made
+   * What conversion improvements were made
+   * What SEO/accessibility/performance work was completed
+   * What commands were run and their results
+   * Any remaining risks or owner decisions needed
+3. Do not claim the site is production-ready unless build/validation passes or remaining blockers are explicitly documented.
+4. Keep changes focused on launch quality. Do not introduce unrelated features.
+
+Owner decisions to flag but not invent:
+
+* Exact travel fee amount
+* Exact max hose/cord distance
+* Deposit policy
+* Cancellation policy
+* Refund policy
+* Whether “licensed and insured” can be publicly stated
+* Whether interior cleaning should ever be publicly promoted
+* Whether service radius should be listed by city or by drive time
+
+Definition of done:
+
+The website should be ready for real customers to visit, understand the services, trust the business, submit a quote request, call/text with the right information, and not be misled about pricing, packages, utilities, restoration services, scheduling, or guarantees.

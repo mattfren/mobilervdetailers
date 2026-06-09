@@ -1,0 +1,69 @@
+---
+import { facebookReviews, facebookSummary, instagramTiles } from "../data/social";
+import { site } from "../data/site";
+
+const rotatingReviews = [...facebookReviews, ...facebookReviews];
+---
+
+<section class="social-proof-section" id="social-proof">
+  <div class="social-proof-bg" aria-hidden="true">
+    <img src="/images/optimized/service-maintenance.webp" alt="" loading="lazy" />
+  </div>
+
+  <div class="container social-proof-inner">
+    <div class="social-proof-header">
+      <div>
+        <p class="eyebrow">Social proof</p>
+        <h2>Trusted RV detailing, shared by real customers.</h2>
+      </div>
+      <div class="facebook-score">
+        <span aria-hidden="true">f</span>
+        <div>
+          <strong>{facebookSummary.rating}</strong>
+          <small>{facebookSummary.note}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-showcase" aria-label="Facebook recommendation gallery">
+      <div class="review-gallery-bar">
+        <p>Facebook recommendations</p>
+        <a href={site.facebookReviewsUrl} target="_blank" rel="noreferrer">View all 5 reviews</a>
+      </div>
+      <div class="review-gallery-viewport">
+        <div class="review-gallery-track" style={`--review-total: ${facebookReviews.length};`}>
+          {rotatingReviews.map((review, index) => (
+            <article class="premium-review-card" aria-hidden={index >= facebookReviews.length ? "true" : undefined}>
+              <div class="premium-review-meta">
+                <span aria-hidden="true">{review.initial}</span>
+                <div>
+                  <strong>{review.name}</strong>
+                  <small>Facebook recommendation • {review.date}</small>
+                </div>
+              </div>
+              <p>“{review.excerpt}”</p>
+              <a href={site.facebookReviewsUrl} target="_blank" rel="noreferrer">Read full review</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="social-feed-band">
+      <div class="social-feed-copy">
+        <p class="eyebrow">Instagram pictures</p>
+        <h3>Follow the work in the field.</h3>
+        <p>Fresh exterior finishes, roof cleanups, awning care, and before-and-after proof from real detailing jobs.</p>
+        <a href={site.instagramUrl} target="_blank" rel="noreferrer">Follow on Instagram</a>
+      </div>
+      <div class="premium-instagram-grid" aria-label="Instagram-style RV detailing photo grid">
+        {instagramTiles.slice(0, 4).map((tile) => (
+          <a class="premium-instagram-tile" href={site.instagramUrl} target="_blank" rel="noreferrer" aria-label={`View ${tile.title} on Instagram`}>
+            <img src={tile.image} alt={tile.alt} width="900" height="900" loading="lazy" />
+            <span>{tile.caption}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { localBusinessJsonLd, site } from "../data/site";
+
+const title = "Terms | Mobile RV Detailers";
+const description =
+  "Website terms for Mobile RV Detailers, a static informational site for quote-based mobile RV detailing in Canton, TX.";
+---
+
+<BaseLayout title={title} description={description} path="/terms" jsonLd={localBusinessJsonLd()}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Terms</p>
+      <h1>Website Terms</h1>
+      <p>Last updated: June 4, 2026.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container rich-text">
+      <p>
+        This website provides general information about Mobile RV Detailers and quote-based mobile RV detailing services.
+        It does not create a service agreement, payment agreement, appointment, or guarantee by itself.
+      </p>
+
+      <h2>Quotes and service scope</h2>
+      <p>
+        RV detailing quotes may depend on RV length, condition, oxidation, service location, access, roof or awning condition,
+        water/electricity availability, site permission, weather, selected services, and photos provided by the customer.
+        Exact pricing is confirmed by quote before scheduling.
+      </p>
+
+      <h2>Booking and payment</h2>
+      <p>
+        Quote and invoice-payment actions must use approved external tools. This website does not include custom calendar logic,
+        payment processing code, visitor login features, stored visitor profiles, or a database.
+      </p>
+
+      <h2>Photos and results</h2>
+      <p>
+        Before/after photos and reviews should only be published when they are real, approved, and accurate.
+        Results can vary by RV surface, condition, age, oxidation, staining, and previous care.
+      </p>
+
+      <h2>Service policies</h2>
+      <p>
+        Deposit, cancellation, no-show, refund, guarantee, service-area, and travel-fee details should be confirmed as part
+        of the quote and scheduling process before work is performed.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Contact Mobile RV Detailers by phone at <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

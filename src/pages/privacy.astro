@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { localBusinessJsonLd, site } from "../data/site";
+
+const title = "Privacy Policy | Mobile RV Detailers";
+const description =
+  "Privacy policy for the Mobile RV Detailers static website, including contact links and external quote, booking, and payment tools.";
+---
+
+<BaseLayout title={title} description={description} path="/privacy" jsonLd={localBusinessJsonLd()}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p>Last updated: June 4, 2026.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container rich-text">
+      <p>
+        Mobile RV Detailers uses this website to share business information and direct visitors to contact,
+        quote, review, and invoice-payment actions. This site is static and does not include customer logins,
+        stored visitor profiles, a database, or custom payment processing.
+      </p>
+
+      <h2>Information you choose to provide</h2>
+      <p>
+        If you call, request a quote, pay an invoice, or use an external form, you may provide details such as your name,
+        phone number, email address, RV information, service location, photos, and requested services.
+      </p>
+
+      <h2>External tools</h2>
+      <p>
+        Quote forms, invoice payments, reviews, social links, and embedded maps may be handled by third-party services such as Square,
+        Tally, OpenStreetMap, Google Maps, Google, Facebook, Instagram, Stripe, or similar tools once approved URLs are configured.
+        Those services may have their own privacy policies.
+      </p>
+
+      <h2>Analytics and cookies</h2>
+      <p>
+        This website does not include analytics scripts or a cookie banner. If Cloudflare Web Analytics, GA4,
+        or another analytics tool is added later, this policy should be updated.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For privacy questions, contact Mobile RV Detailers by phone at <a href={site.phoneHref}>{site.phone}</a>.
+        Quote and message requests may also be sent through the linked social and contact channels.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

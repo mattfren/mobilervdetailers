@@ -1,0 +1,12 @@
+filename,current_location,asset_type,priority,intended_use,alt_text,notes
+logo-mobile-rv-detailers.png,public/images/originals/,logo,must-use,header/footer/favicon source,Mobile RV Detailers logo,Use highest-resolution original available
+logo-mobile-rv-detailers-light.png,public/images/originals/,logo,should-use,light-section logo variant,Mobile RV Detailers logo,Optional if logo needs a light-background version
+rv-hero-main.jpg,public/images/originals/,photo,must-use,homepage hero,Polished RV exterior for mobile RV detailing,Prefer best cinematic RV image
+rv-before-after-01.jpg,public/images/originals/,before-after,must-use,proof section/gallery,Before and after RV detailing result,Use real customer result only
+rv-service-exterior-wash.jpg,public/images/originals/,photo,should-use,exterior wash card,RV exterior wash service,Use if clear and relevant
+rv-service-roof-cleaning.jpg,public/images/originals/,photo,should-use,roof cleaning service card,RV roof cleaning service,Use if available
+rv-service-awning-cleaning.jpg,public/images/originals/,photo,should-use,awning cleaning service card,RV awning cleaning in progress,Use if clear and high-quality
+rv-service-black-streaks.jpg,public/images/originals/,photo,should-use,black streak removal card,Black streak removal on RV exterior,Use high-proof result if available
+rv-service-wax-protection.jpg,public/images/originals/,photo,should-use,wax/protection card,RV exterior shine after wax protection,Use a polished finish image
+rv-team-or-mobile-setup.jpg,public/images/originals/,photo,optional,about/trust section,Mobile RV Detailers team or service setup,Only use if professional-looking
+customer-review-screenshot-01.png,public/images/originals/,screenshot,optional,reviews section,Customer review for Mobile RV Detailers,Only use real public review screenshots if allowed

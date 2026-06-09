@@ -1,0 +1,40 @@
+---
+import SEO from "../components/SEO.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import "../styles/global.css";
+
+type JsonLd = Record<string, unknown>;
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  jsonLd?: JsonLd | JsonLd[];
+}
+
+const { title, description, path = "/", image, jsonLd = [] } = Astro.props;
+const bodyClass = path === "/service-areas" ? "page-service-areas" : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B0D10" />
+    <link rel="icon" href="/images/optimized/favicon-mobile-rv-detailers.png" type="image/png" />
+    <SEO title={title} description={description} path={path} image={image} jsonLd={jsonLd} />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <StickyMobileCTA />
+  </body>
+</html>

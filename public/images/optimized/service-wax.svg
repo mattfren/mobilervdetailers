@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Waxing and protection placeholder</title>
+  <desc id="desc">Temporary placeholder for RV waxing and exterior protection photo.</desc>
+  <rect width="900" height="620" fill="#0B0D10"/>
+  <path d="M112 370h598c48 0 87-39 87-87V170H234c-67 0-122 55-122 122v78Z" fill="#F7F5EF"/>
+  <path d="M176 222h170v96H158v-78c0-10 8-18 18-18Zm218 0h171v96H394Zm217 0h115v96H611Z" fill="#141B24"/>
+  <path d="M112 388h685v28H112Z" fill="#D71920"/>
+  <circle cx="262" cy="464" r="47" fill="#07090B"/>
+  <circle cx="631" cy="464" r="47" fill="#07090B"/>
+  <path d="M668 95l20 57 60 2-47 36 17 58-50-34-50 34 17-58-47-36 60-2Z" fill="#C4893A"/>
+  <text x="74" y="560" fill="#F8F7F2" font-family="Arial, sans-serif" font-size="34" font-weight="800">WAX / PROTECTION PHOTO NEEDED</text>
+</svg>
