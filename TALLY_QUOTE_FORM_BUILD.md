@@ -1,6 +1,12 @@
 # Mobile RV Detailers Tally Quote Form
 
-Build this form in Tally, then paste the published Tally URL into `src/data/site.ts` as `quoteFormUrl`.
+Build/reference for the published Tally form used by the site.
+
+Published form URL:
+
+```text
+https://tally.so/r/xXvkqJ
+```
 
 ## Form Title
 
@@ -155,20 +161,14 @@ https://mobilervdetailers.com
 
 ## Site Wiring
 
-After publishing the Tally form:
-
-1. Copy the public Tally form URL.
-2. Open `src/data/site.ts`.
-3. Set:
+The live site is already wired in `src/data/site.ts`:
 
 ```ts
-quoteFormUrl: "https://tally.so/r/YOUR_FORM_ID",
+quoteFormUrl: "https://tally.so/r/xXvkqJ",
 ```
 
-4. Run:
+After any form or CTA change, run:
 
 ```bash
-npm run build
+npm run audit:production
 ```
-
-Until this URL is added, the site routes `Request Quote` to `/contact` and keeps Facebook Messenger as a secondary contact option.

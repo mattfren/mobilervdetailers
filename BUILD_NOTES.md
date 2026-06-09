@@ -66,22 +66,22 @@ The first install surfaced one moderate Astro advisory. Astro was upgraded to `^
 - Optimized WebP derivatives were generated in `public/images/optimized/`.
 - The site now uses real supplied imagery for the hero, proof section, service cards, gallery, logo, and favicon.
 - The homepage proof section uses separately cropped before/after panels generated from the supplied proof photo for cleaner alignment.
-- Local Facebook, Instagram, and Yelp SVG logo assets were added. Yelp remains hidden until an approved `site.yelpUrl` is configured.
+- Local Facebook, Instagram, Yelp, Google, and Google Reviews SVG logo assets are configured for social/review links.
 - The selected source and optimized files are listed in `asset_manifest.csv`.
 - Owner approval is still recommended for final crops, captions, and any customer-permission concerns.
 
 ## Assumptions
 
-- Phone number is `(903) 502-4242`, pending owner verification.
+- Phone number is `(903) 502-4242`.
 - Primary location is Canton, TX.
 - Quote-first flow is the safest default.
 - Service Areas now uses a guide with two approximate drive-time zones from Canton: about 30 minutes with no travel fee and about 1 hour with a travel fee.
 - Service Areas now uses a client-side Leaflet/OpenStreetMap map centered on Canton with map-native service circles; the site still has no backend or custom routing logic.
 - Starting package prices and RV Care Club membership pricing are now shown from `mobile-rv-detailers-membership-section.md`.
-- Quote requests currently route to Facebook Messenger.
-- Booking currently routes to the contact page until a dedicated external booking URL is approved.
+- Quote requests route to the published Tally form.
+- Booking intentionally routes to the contact page because new work starts with quote review, not direct scheduling.
 - Google Business and exact Google review links are published. Public email is not published yet.
-- Yelp, Facebook, Instagram, and payment links are configured.
+- Yelp, Facebook, Instagram, Google Business, Google Reviews, and payment links are configured.
 - The social proof section now uses an Instagram-style local photo grid and a slow rotating Facebook recommendation gallery.
 - All five public Facebook recommendation snippets visible in the current GoDaddy-era Mobile RV Detailers review widget are included and should be owner-approved before launch.
 - No licensed/insured, certification, guarantee, or faith-based claims are published as confirmed facts.
@@ -91,6 +91,7 @@ The first install surfaced one moderate Astro advisory. Astro was upgraded to `^
 ## Validation
 
 - `npm run build` passes.
+- `npm run audit:production` passes.
 - `npm audit --audit-level=moderate` passes with zero vulnerabilities.
 - Browser QA checked desktop `1440x1000`, tablet `768x1000`, and mobile `390x900`.
 - Required routes were opened in the browser.
@@ -138,8 +139,7 @@ Test the Cloudflare preview URL before pointing `mobilervdetailers.com` or `www.
 
 ## Next steps
 
-1. Add a public email URL if that channel should be published.
-2. Review selected photo crops and captions.
-3. Approve service areas, policy language, package wording, and about copy.
-4. Add real reviews only after approval.
-5. Re-run `npm run build` after content and asset updates.
+1. Connect Cloudflare Pages with build command `npm run build` and output directory `dist`.
+2. Test the Cloudflare preview URL before DNS cutover.
+3. Preserve existing email DNS records before any domain DNS change.
+4. Re-run `npm run audit:production` after content and asset updates.
