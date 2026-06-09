@@ -8,6 +8,7 @@ Production static Astro website for Mobile RV Detailers, a Canton, TX mobile RV 
 - Local image assets only
 - No backend, database, authentication, custom payment code, or custom calendar logic
 - Cloudflare Pages target: `npm run build` with `dist` output
+- Node.js pinned to `22.16.0` for Cloudflare Pages builds
 
 ## Commands
 
@@ -29,6 +30,7 @@ Framework preset: Astro
 Build command: npm run build
 Build output directory: dist
 Root directory: /
+Node version: 22.16.0
 ```
 
 Production domain:
@@ -45,6 +47,8 @@ All customer-facing action links live in `src/data/site.ts`.
 - Phone/text: `(903) 502-4242`
 - Payment: external invoice/payment portal only after a quote or invoice is confirmed
 - Social/review links: Facebook, Instagram, Yelp, Google Business, Google Reviews
+
+Cloudflare runtime/deployment settings live in `wrangler.jsonc`.
 
 ## Launch Guardrails
 

@@ -128,6 +128,32 @@ const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"))
 if (packageJson.scripts?.build !== "astro build") {
   fail("package.json build script must remain `astro build` for Cloudflare Pages.");
 }
+if (packageJson.engines?.node !== ">=22.12.0") {
+  fail("package.json must pin engines.node to >=22.12.0 for Astro/Cloudflare Pages builds.");
+}
+
+for (const versionFile of [".node-version", ".nvmrc"]) {
+  const versionPath = join(root, versionFile);
+  if (!existsSync(versionPath)) {
+    fail(`${versionFile} is missing; Cloudflare Pages needs an explicit Node version.`);
+  } else if (readFileSync(versionPath, "utf8").trim() !== "22.16.0") {
+    fail(`${versionFile} must contain 22.16.0.`);
+  }
+}
+
+const wranglerPath = join(root, "wrangler.jsonc");
+if (!existsSync(wranglerPath)) {
+  fail("wrangler.jsonc is missing.");
+} else {
+  const wranglerText = readFileSync(wranglerPath, "utf8");
+  for (const required of [
+    '"pages_build_output_dir": "dist"',
+    '"observability"',
+    '"invocation_logs": true'
+  ]) {
+    if (!wranglerText.includes(required)) fail(`wrangler.jsonc missing ${required}.`);
+  }
+}
 
 const totalPublicSize = existsSync(publicDir)
   ? walk(publicDir).reduce((sum, file) => sum + statSync(file).size, 0)

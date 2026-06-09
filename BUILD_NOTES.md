@@ -6,6 +6,7 @@
 - TypeScript data files
 - Custom CSS design system
 - Optimized local WebP assets from the provided photo set
+- Node.js pinned to `22.16.0` with `.node-version`, `.nvmrc`, and `package.json` engines for Cloudflare Pages
 - No backend
 - No database
 - No auth
@@ -133,7 +134,10 @@ Framework preset: Astro
 Build command: npm run build
 Build output directory: dist
 Root directory: /
+Node version: 22.16.0
 ```
+
+The repo includes `wrangler.jsonc` with Pages output and observability settings.
 
 Test the Cloudflare preview URL before pointing `mobilervdetailers.com` or `www.mobilervdetailers.com` at the new site.
 
