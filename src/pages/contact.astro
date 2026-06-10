@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-import { getMessengerAction, getQuoteAction, getTextAction, localBusinessJsonLd, site } from "../data/site";
+import { getMessengerAction, getQuoteAction, getTextAction, localBusinessJsonLd } from "../data/site";
 
 const title = "Request an RV Detailing Quote | Mobile RV Detailers";
 const description =
@@ -31,7 +31,6 @@ const textAction = getTextAction();
         <p>Use the quote form for RV details, photos, service location notes, water/electricity availability, and preferred timing.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-          <a class="btn btn-ghost" href={site.phoneHref}>Call {site.phone}</a>
           <a class="btn btn-ghost" href={textAction.href}>{textAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
         </div>

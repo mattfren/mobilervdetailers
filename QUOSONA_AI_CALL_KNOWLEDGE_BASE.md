@@ -35,7 +35,8 @@ Some older website readouts may mention login features, direct scheduling featur
 - Appointment timing is confirmed after quote review.
 - Payment link should only be used after an invoice or payment request has been issued.
 - Email is not currently published as a primary contact method on the current site.
-- The current public pricing includes starting package prices and RV Care Club membership pricing.
+- The current public site does not publish exact prices. All service paths are quote required.
+- RV Care Club pricing and benefits are not public-facing until owner approval.
 - Mobile RV Detailers currently requires water and electricity at the customer location.
 - Mobile RV Detailers does not currently offer polishing, buffing, ceramic coating, paint correction, gel coat restoration, heavy compounding, or full oxidation restoration.
 
@@ -45,9 +46,9 @@ Mobile RV Detailers is based in Canton, TX.
 
 ## Ownership And Story
 
-Mobile RV Detailers was founded in 2021 by Carl and Jana Fields after they bought their first RV and had trouble finding someone to detail it. Out of necessity, they started building an easier and more affordable way for RV owners to protect their investment.
+Mobile RV Detailers was founded in 2021 by Carl and Jana Fields after they bought their first RV and had trouble finding someone to detail it. Out of necessity, they started building an easier and more practical way for RV owners to care for a parked rig.
 
-What began as a personal need became a full-service mobile RV detailing family business serving owners around Canton, TX and nearby communities.
+What began as a personal need became a mobile RV detailing family business serving owners around Canton, TX and nearby communities.
 
 Service area is handled as two approximate drive-time zones:
 

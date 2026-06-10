@@ -62,9 +62,10 @@ The first install surfaced one moderate Astro advisory. Astro was upgraded to `^
 
 ## Assets
 
-- `Pictures.zip` was extracted into `public/images/originals/pictures-import/`.
+- `Pictures.zip` source files are archived in `source-assets/images/originals/pictures-import/` so raw originals are kept in the repo but not deployed from `public/`.
 - The supplied logo SVG, profile image, RV photos, before/after shots, awning image, roof images, wheel detail, and exterior photos were reviewed.
 - Optimized WebP derivatives were generated in `public/images/optimized/`.
+- Only optimized, site-ready assets belong in `public/images/optimized/`; raw originals must stay outside `public/` to keep Cloudflare Pages output lean.
 - The site now uses real supplied imagery for the hero, proof section, service cards, gallery, logo, and favicon.
 - The homepage proof section uses separately cropped before/after panels generated from the supplied proof photo for cleaner alignment.
 - Local Facebook, Instagram, Yelp, Google, and Google Reviews SVG logo assets are configured for social/review links.

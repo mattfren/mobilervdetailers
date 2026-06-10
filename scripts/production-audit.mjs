@@ -30,11 +30,18 @@ if (!existsSync(distDir)) {
 
 if (existsSync(publicDir)) {
   const publicFiles = walk(publicDir);
+  const publicOriginalAssets = publicFiles.filter((file) =>
+    relative(root, file).replaceAll("\\", "/").toLowerCase().startsWith("public/images/originals/")
+  );
   const placeholderAssets = publicFiles.filter((file) => {
     const normalized = relative(root, file).replaceAll("\\", "/").toLowerCase();
     if (!normalized.includes("/images/optimized/")) return false;
     return normalized.includes("placeholder");
   });
+
+  for (const file of publicOriginalAssets) {
+    fail(`Raw original asset must not be deployed from public/: ${relative(root, file).replaceAll("\\", "/")}`);
+  }
 
   for (const file of placeholderAssets) {
     fail(`Public placeholder asset is still present: ${relative(root, file).replaceAll("\\", "/")}`);

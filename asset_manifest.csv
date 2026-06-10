@@ -1,40 +1,40 @@
 filename,current_location,asset_type,priority,intended_use,alt_text,notes
-Print_Transparent (1).svg,public/images/originals/pictures-import/Pictures/,logo,source,original logo source,Mobile RV Detailers logo,Supplied in Pictures.zip
+Print_Transparent (1).svg,source-assets/images/originals/pictures-import/Pictures/,logo,source,original logo source,Mobile RV Detailers logo,Supplied in Pictures.zip
 logo-mobile-rv-detailers.svg,public/images/optimized/,logo,must-use,header/footer logo,Mobile RV Detailers logo,Copied from supplied SVG with clean optimized filename
-Facebook Profile Picture.png,public/images/originals/pictures-import/Pictures/,logo,source,favicon source,Mobile RV Detailers profile logo,Supplied in Pictures.zip
+Facebook Profile Picture.png,source-assets/images/originals/pictures-import/Pictures/,logo,source,favicon source,Mobile RV Detailers profile logo,Supplied in Pictures.zip
 favicon-mobile-rv-detailers.png,public/images/optimized/,logo,should-use,favicon,Mobile RV Detailers favicon,Generated from supplied profile logo
 social-facebook.svg,public/images/optimized/,logo,should-use,social link icon,Facebook logo,Local SVG icon for configured Facebook link
 social-instagram.svg,public/images/optimized/,logo,should-use,social link icon,Instagram logo,Local SVG icon for configured Instagram link
 social-yelp.svg,public/images/optimized/,logo,should-use,social link icon,Yelp logo,Local SVG icon; hidden until approved Yelp URL is configured
-Concord Class C.jpg,public/images/originals/pictures-import/Pictures/,photo,source,homepage hero source,Clean Class C RV exterior,Supplied in Pictures.zip
+Concord Class C.jpg,source-assets/images/originals/pictures-import/Pictures/,photo,source,homepage hero source,Clean Class C RV exterior,Supplied in Pictures.zip
 hero-rv-exterior.webp,public/images/optimized/,photo,must-use,homepage hero,Clean Class C RV exterior used for Mobile RV Detailers hero image,Optimized WebP derivative
-IMG_6732.jpg,public/images/originals/pictures-import/Pictures/,before-after,source,before-after proof source,Before and after RV exterior cleaning result,Supplied in Pictures.zip
+IMG_6732.jpg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,before-after proof source,Before and after RV exterior cleaning result,Supplied in Pictures.zip
 proof-before-after.webp,public/images/optimized/,before-after,must-use,proof section/gallery,Before and after RV exterior cleaning result,Optimized WebP derivative
 proof-before-panel.webp,public/images/optimized/,before-after,must-use,homepage proof before panel,Before RV exterior cleaning side panel,Optimized local crop from IMG_6732.jpg
 proof-after-panel.webp,public/images/optimized/,before-after,must-use,homepage proof after panel,After RV exterior cleaning side panel,Optimized local crop from IMG_6732.jpg
-278164720_165381889244414_2150605845704353142_.jpg,public/images/originals/pictures-import/Pictures/,before-after,source,exterior wash source,Before and after RV lower side and wheel area exterior wash result,Supplied in Pictures.zip
+278164720_165381889244414_2150605845704353142_.jpg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,exterior wash source,Before and after RV lower side and wheel area exterior wash result,Supplied in Pictures.zip
 service-exterior-wash.webp,public/images/optimized/,photo,should-use,Exterior RV Wash service card,Before and after RV lower side and wheel area exterior wash result,Optimized WebP derivative
-IMG_6713.jpg,public/images/originals/pictures-import/Pictures/,before-after,source,roof cleaning source,Before and after RV roof cleaning result,Supplied in Pictures.zip
+IMG_6713.jpg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,roof cleaning source,Before and after RV roof cleaning result,Supplied in Pictures.zip
 service-roof-cleaning.webp,public/images/optimized/,photo,should-use,Roof Cleaning service card,Before and after RV roof cleaning result,Optimized WebP derivative
-IMG_2197.JPG,public/images/originals/pictures-import/Pictures/,before-after,source,black streak/front cap source,Before and after RV front cap cleaning proof photo,Supplied in Pictures.zip
+IMG_2197.JPG,source-assets/images/originals/pictures-import/Pictures/,before-after,source,black streak/front cap source,Before and after RV front cap cleaning proof photo,Supplied in Pictures.zip
 service-black-streak.webp,public/images/optimized/,photo,should-use,Black Streak Removal service card,Before and after RV front cap cleaning proof photo,Optimized WebP derivative
-Class C side.webp,public/images/originals/pictures-import/Pictures/,photo,source,wax/protection source,Clean Class C RV exterior side after detailing,Supplied in Pictures.zip
+Class C side.webp,source-assets/images/originals/pictures-import/Pictures/,photo,source,wax/protection source,Clean Class C RV exterior side after detailing,Supplied in Pictures.zip
 service-wax-protection.webp,public/images/optimized/,photo,should-use,Waxing and Protection service card,Clean Class C RV exterior side after detailing,Optimized WebP derivative
-Awning Cleaning.jpg,public/images/originals/pictures-import/Pictures/,photo,source,awning cleaning source,Mobile RV Detailers cleaning an RV awning,Supplied in Pictures.zip
+Awning Cleaning.jpg,source-assets/images/originals/pictures-import/Pictures/,photo,source,awning cleaning source,Mobile RV Detailers cleaning an RV awning,Supplied in Pictures.zip
 service-awning-cleaning.webp,public/images/optimized/,photo,should-use,Awning Cleaning service card,Mobile RV Detailers cleaning an RV awning,Optimized WebP derivative
-DSC02590.jpg,public/images/originals/pictures-import/Pictures/,photo,source,seals/gaskets source,Close-up of an RV seal and trim detail area,Supplied in Pictures.zip
+DSC02590.jpg,source-assets/images/originals/pictures-import/Pictures/,photo,source,seals/gaskets source,Close-up of an RV seal and trim detail area,Supplied in Pictures.zip
 service-seals-gaskets.webp,public/images/optimized/,photo,should-use,Seals and Gaskets service card,Close-up of an RV seal and trim detail area,Optimized WebP derivative
-outback front.webp,public/images/originals/pictures-import/Pictures/,before-after,source,bug/tar front cap source,Before and after RV front cap cleaning,Supplied in Pictures.zip
+outback front.webp,source-assets/images/originals/pictures-import/Pictures/,before-after,source,bug/tar front cap source,Before and after RV front cap cleaning,Supplied in Pictures.zip
 service-bug-tar.webp,public/images/optimized/,photo,should-use,Bug and Tar Removal service card,Before and after RV front cap cleaning,Optimized WebP derivative
-blob.png,public/images/originals/pictures-import/Pictures/,photo,source,maintenance/source setup source,Mobile RV Detailers service setup beside an RV roof,Supplied in Pictures.zip
+blob.png,source-assets/images/originals/pictures-import/Pictures/,photo,source,maintenance/source setup source,Mobile RV Detailers service setup beside an RV roof,Supplied in Pictures.zip
 service-maintenance.webp,public/images/optimized/,photo,should-use,Maintenance Plans service card,Mobile RV Detailers service setup beside an RV roof,Optimized WebP derivative
-IMG_6725.jpg,public/images/originals/pictures-import/Pictures/,before-after,source,gallery front cap source,Before and after RV front cap cleaning result,Supplied in Pictures.zip
+IMG_6725.jpg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,gallery front cap source,Before and after RV front cap cleaning result,Supplied in Pictures.zip
 gallery-front-cap-before-after.webp,public/images/optimized/,before-after,should-use,gallery,Before and after RV front cap cleaning result,Optimized WebP derivative
-IMG_2450.jpeg,public/images/originals/pictures-import/Pictures/,before-after,source,gallery wheel detail source,Before and after RV wheel detailing result,Supplied in Pictures.zip
+IMG_2450.jpeg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,gallery wheel detail source,Before and after RV wheel detailing result,Supplied in Pictures.zip
 gallery-wheel-detail.webp,public/images/optimized/,before-after,should-use,gallery,Before and after RV wheel detailing result,Optimized WebP derivative
-IMG_2440.jpeg,public/images/originals/pictures-import/Pictures/,before-after,source,gallery roof seal source,Before and after RV roof seal area cleaning,Supplied in Pictures.zip
+IMG_2440.jpeg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,gallery roof seal source,Before and after RV roof seal area cleaning,Supplied in Pictures.zip
 gallery-roof-seal-before-after.webp,public/images/optimized/,before-after,should-use,gallery,Before and after RV roof seal area cleaning,Optimized WebP derivative
-Awning.webp,public/images/originals/pictures-import/Pictures/,photo,source,gallery awning source,RV awning cleaning in progress,Supplied in Pictures.zip
+Awning.webp,source-assets/images/originals/pictures-import/Pictures/,photo,source,gallery awning source,RV awning cleaning in progress,Supplied in Pictures.zip
 gallery-awning-cleaning.webp,public/images/optimized/,photo,should-use,gallery,RV awning cleaning in progress,Optimized WebP derivative
-278126428_165381849244418_5348797226385888789_.jpg,public/images/originals/pictures-import/Pictures/,before-after,source,gallery rear exterior source,Before and after rear RV exterior cleaning result,Supplied in Pictures.zip
+278126428_165381849244418_5348797226385888789_.jpg,source-assets/images/originals/pictures-import/Pictures/,before-after,source,gallery rear exterior source,Before and after rear RV exterior cleaning result,Supplied in Pictures.zip
 gallery-rear-exterior-before-after.webp,public/images/optimized/,before-after,should-use,gallery,Before and after rear RV exterior cleaning result,Optimized WebP derivative
