@@ -13,10 +13,11 @@ interface Props {
   path?: string;
   image?: string;
   jsonLd?: JsonLd | JsonLd[];
+  noindex?: boolean;
 }
 
-const { title, description, path = "/", image, jsonLd = [] } = Astro.props;
-const bodyClass = path === "/service-areas" ? "page-service-areas" : undefined;
+const { title, description, path = "/", image, jsonLd = [], noindex = false } = Astro.props;
+const bodyClass = path.replace(/\/$/, "") === "/service-areas" ? "page-service-areas" : undefined;
 ---
 
 <!doctype html>
@@ -26,7 +27,7 @@ const bodyClass = path === "/service-areas" ? "page-service-areas" : undefined;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0B0D10" />
     <link rel="icon" href="/images/optimized/favicon-mobile-rv-detailers.png" type="image/png" />
-    <SEO title={title} description={description} path={path} image={image} jsonLd={jsonLd} />
+    <SEO title={title} description={description} path={path} image={image} jsonLd={jsonLd} noindex={noindex} />
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main-content">Skip to content</a>

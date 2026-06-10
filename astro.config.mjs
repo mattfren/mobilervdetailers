@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 export default defineConfig({
   site: "https://mobilervdetailers.com",
   output: "static",
+  trailingSlash: "always",
   vite: {
     resolve: {
       alias: {

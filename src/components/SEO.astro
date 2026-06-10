@@ -31,11 +31,13 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 <link rel="canonical" href={canonical} />
 <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 <meta property="og:site_name" content={site.name} />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={socialImage} />
+<meta property="og:image:alt" content={`${site.name} — mobile RV detailing in Canton, TX`} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />

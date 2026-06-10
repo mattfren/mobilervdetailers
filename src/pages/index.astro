@@ -39,7 +39,7 @@ const process = [
 ];
 ---
 
-<BaseLayout title={title} description={description} path="/" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs)]}>
+<BaseLayout title={title} description={description} path="/" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs.slice(0, 6))]}>
   <Hero />
 
   <section class="section section-light">
@@ -169,8 +169,8 @@ const process = [
           requests when the scope is clear.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-red" href="/about">Read About Mobile RV Detailers</a>
-          <a class="btn btn-ghost" href="/service-areas">Service Areas</a>
+          <a class="btn btn-red" href="/about/">Read About Mobile RV Detailers</a>
+          <a class="btn btn-ghost" href="/service-areas/">Service Areas</a>
         </div>
       </div>
       <div class="about-home-panel">

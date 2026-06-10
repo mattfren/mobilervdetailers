@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
 import { localBusinessJsonLd, site } from "../data/site";
 
-const title = "Mobile RV Detailing Service Areas | Canton, TX";
+const title = "Mobile RV Detailing Service Areas | Canton & East Texas";
 const description =
-  "Mobile RV Detailers is based in Canton, TX and provides quote-based mobile RV exterior care at homes, RV parks, storage facilities, and parked RV locations.";
+  "Canton, TX-based mobile RV detailing serving East Texas within about an hour's drive. Quote-based exterior care at homes, RV parks, and storage facilities.";
 
 const localRadiusMeters = 35000;
 const extendedRadiusMeters = 70000;
@@ -66,6 +66,29 @@ const extendedRadiusMeters = 70000;
         The map is for orientation only. Travel times are approximate from Canton, TX, and final availability and travel fee depend on the route, RV location, access, weather, schedule, and requested service scope.
         <a href={site.mapSearchUrl} target="_blank" rel="noreferrer">Open Canton in Google Maps.</a>
       </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-kicker">
+        <p class="eyebrow">Communities in range</p>
+        <h2>East Texas communities the travel zones typically reach.</h2>
+        <p class="lead">
+          These are examples of communities that usually fall inside the two drive-time zones from Canton.
+          Final availability and any travel fee are always confirmed during the quote.
+        </p>
+      </div>
+      <div class="split-section">
+        <article class="info-card">
+          <h3>Local zone — about 30 minutes from Canton</h3>
+          <p>{site.zoneCommunities.local.join(", ")}, and nearby Van Zandt County communities.</p>
+        </article>
+        <article class="info-card">
+          <h3>Extended zone — about 1 hour from Canton</h3>
+          <p>{site.zoneCommunities.extended.join(", ")}, and other East Texas communities along the route.</p>
+        </article>
+      </div>
     </div>
   </section>
 

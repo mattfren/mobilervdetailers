@@ -28,17 +28,17 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-        <li><a href="/book">Book</a></li>
+        <li><a href="/book/">Book</a></li>
       </ul>
     </div>
 
     <div>
       <h2 class="footer-heading">Services</h2>
       <ul class="footer-links">
-        <li><a href="/services#exterior-rv-wash">Exterior RV Wash</a></li>
-        <li><a href="/services#roof-cleaning">Roof Cleaning</a></li>
-        <li><a href="/services#black-streak-removal">Black Streak Removal</a></li>
-        <li><a href="/services#wax-soap-hand-dry">Wax Soap & Hand Dry</a></li>
+        <li><a href="/services/#exterior-rv-wash">Exterior RV Wash</a></li>
+        <li><a href="/services/#roof-cleaning">Roof Cleaning</a></li>
+        <li><a href="/services/#black-streak-removal">Black Streak Removal</a></li>
+        <li><a href="/services/#wax-soap-hand-dry">Wax Soap & Hand Dry</a></li>
       </ul>
     </div>
 
@@ -47,11 +47,11 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
       <ul class="footer-links">
         <li><a href={site.phoneHref}>{site.phone}</a></li>
         {isConfiguredUrl(site.facebookUrl) && <li><a href={site.facebookUrl} target="_blank" rel="noreferrer">Facebook</a></li>}
-        <li><a href="/service-areas">Canton, TX</a></li>
+        <li><a href="/service-areas/">Canton, TX</a></li>
         <li><a href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a></li>
         {hasPaymentUrl && <li><a href={site.paymentUrl} target="_blank" rel="noreferrer">Pay Invoice</a></li>}
-        <li><a href="/privacy">Privacy</a></li>
-        <li><a href="/terms">Terms</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
       </ul>
     </div>
   </div>

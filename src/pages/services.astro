@@ -31,7 +31,7 @@ const serviceSchema = services.map((service) => ({
 }));
 ---
 
-<BaseLayout title={title} description={description} path="/services" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs), ...serviceSchema]}>
+<BaseLayout title={title} description={description} path="/services" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs.slice(0, 7)), ...serviceSchema]}>
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Services</p>

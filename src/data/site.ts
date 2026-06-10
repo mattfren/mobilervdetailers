@@ -14,6 +14,7 @@ export const site = {
   domain: "mobilervdetailers.com",
   baseUrl: "https://mobilervdetailers.com",
   phone: "(903) 502-4242",
+  phoneE164: "+19035024242",
   phoneHref: "tel:+19035024242",
   email: "",
   emailHref: "",
@@ -70,12 +71,16 @@ export const site = {
     "Canton, TX Based"
   ],
   nav: [
-    { label: "Services", href: "/services" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Service Areas", href: "/service-areas" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" }
-  ]
+    { label: "Services", href: "/services/" },
+    { label: "Gallery", href: "/gallery/" },
+    { label: "Service Areas", href: "/service-areas/" },
+    { label: "About", href: "/about/" },
+    { label: "Contact", href: "/contact/" }
+  ],
+  zoneCommunities: {
+    local: ["Canton", "Wills Point", "Edgewood", "Grand Saline", "Van", "Ben Wheeler", "Fruitvale", "Mabank", "Eustace"],
+    extended: ["Tyler", "Lindale", "Mineola", "Quitman", "Emory", "Athens", "Gun Barrel City", "Terrell", "Kaufman"]
+  }
 };
 
 export const launchApprovals = {
@@ -95,7 +100,7 @@ export const isTodoLink = (url?: string) => !url || url === "#todo";
 export const isConfiguredUrl = (url?: string) => !isTodoLink(url);
 
 export const getQuoteAction = () => {
-  const href = !isTodoLink(site.quoteFormUrl) ? site.quoteFormUrl : "/contact";
+  const href = !isTodoLink(site.quoteFormUrl) ? site.quoteFormUrl : "/contact/";
   const external = href.startsWith("http");
 
   return {
@@ -119,7 +124,7 @@ export const getTextAction = () => ({
 
 export const getBookingAction = () => {
   const hasBookingUrl = !isTodoLink(site.bookingUrl);
-  const href = hasBookingUrl ? site.bookingUrl : "/contact";
+  const href = hasBookingUrl ? site.bookingUrl : "/contact/";
   const external = href.startsWith("http");
 
   return {
@@ -131,7 +136,13 @@ export const getBookingAction = () => {
 
 export const absoluteUrl = (path = "/") => {
   if (path.startsWith("http")) return path;
-  return new URL(path, site.baseUrl).toString();
+  const url = new URL(path, site.baseUrl);
+  // Built pages are served as directories (/services/), so canonical and og:url
+  // must use the trailing-slash form to avoid pointing at a redirect.
+  if (!url.pathname.endsWith("/") && !/\.[a-z0-9]+$/i.test(url.pathname)) {
+    url.pathname += "/";
+  }
+  return url.toString();
 };
 
 export const localBusinessJsonLd = () => {
@@ -146,16 +157,40 @@ export const localBusinessJsonLd = () => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": `${site.baseUrl}/#business`,
     name: site.name,
-    url: site.baseUrl,
-    telephone: site.phone,
+    url: `${site.baseUrl}/`,
+    telephone: site.phoneE164,
     image: absoluteUrl(site.images.hero),
+    logo: absoluteUrl(site.images.logo),
+    foundingDate: "2021",
+    founder: [
+      { "@type": "Person", name: "Carl Fields" },
+      { "@type": "Person", name: "Jana Fields" }
+    ],
     ...(launchApprovals.pricesApproved ? { priceRange: "Quote-based" } : {}),
     description,
-    areaServed: site.serviceAreas.map((area) => ({
-      "@type": "City",
-      name: area
-    })),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: site.mapCenter.lat,
+      longitude: site.mapCenter.lng
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: site.location.city,
+        containedInPlace: { "@type": "State", name: "Texas" }
+      },
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: site.mapCenter.lat,
+          longitude: site.mapCenter.lng
+        },
+        geoRadius: "70000"
+      }
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: site.location.city,

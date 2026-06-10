@@ -7,7 +7,7 @@ const quoteAction = getQuoteAction();
 
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src={site.images.hero} alt="" width="1400" height="900" loading="eager" />
+    <img src={site.images.hero} alt="" width="1400" height="900" loading="eager" fetchpriority="high" />
   </div>
   <div class="container hero-grid">
     <div class="hero-copy">
@@ -26,7 +26,7 @@ const quoteAction = getQuoteAction();
         >
           {quoteAction.label}
         </a>
-        <a class="btn btn-glass btn-large" href="/services">View Services</a>
+        <a class="btn btn-glass btn-large" href="/services/">View Services</a>
       </div>
       <TrustChips />
     </div>

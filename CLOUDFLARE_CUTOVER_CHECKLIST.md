@@ -75,6 +75,15 @@ Records to preserve unless the owner intentionally changes email/payment provide
    - No licensed/insured claim is visible.
    - Email and payment DNS still work as intended.
 
+## Post-cutover SEO steps
+
+1. Add a Cloudflare Redirect Rule so `www.mobilervdetailers.com/*` 301-redirects to `https://mobilervdetailers.com/$1` (Pages `_redirects` cannot redirect by hostname). Canonical tags already point at the apex domain, but the explicit redirect consolidates signals.
+2. Verify the domain in Google Search Console (the existing Google site verification TXT record should make Domain verification immediate), then submit `https://mobilervdetailers.com/sitemap.xml`.
+3. In Search Console, use URL Inspection → Request Indexing for `/`, `/services/`, and `/service-areas/` to speed up replacement of the old GoDaddy pages in the index.
+4. Update the Google Business Profile website link to `https://mobilervdetailers.com/` and confirm the profile category, phone `(903) 502-4242`, and Canton, TX service area match the site. The Business Profile is the dominant ranking factor for "RV detailing near me" map-pack results.
+5. Confirm Cloudflare bot protection (Bot Fight Mode / managed challenge) is not blocking `Googlebot` or `Bingbot` — the zone currently returns 403 to unknown user agents, so check Security → Events after cutover for blocked verified crawlers.
+6. Verify Facebook, Instagram, and Yelp profiles all link to `https://mobilervdetailers.com/` (consistent NAP citations).
+
 ## Reference
 
 - Cloudflare Pages custom domains: `https://developers.cloudflare.com/pages/configuration/custom-domains/`

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { localBusinessJsonLd } from "../data/site";
+
+const title = "Page Not Found | Mobile RV Detailers";
+const description =
+  "That page does not exist. Find mobile RV detailing services, photos, service areas, and quote options from Mobile RV Detailers in Canton, TX.";
+---
+
+<BaseLayout title={title} description={description} path="/404" jsonLd={localBusinessJsonLd()} noindex>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1>That page could not be found.</h1>
+      <p>The page may have moved. Use one of these paths to get back to RV detailing information.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="/">Go to Homepage</a>
+        <a class="btn btn-ghost" href="/services/">View Services</a>
+        <a class="btn btn-ghost" href="/contact/">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
