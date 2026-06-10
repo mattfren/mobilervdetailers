@@ -6,13 +6,15 @@ const quoteAction = getQuoteAction();
 ---
 
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <img src={site.images.hero} alt="" width="1400" height="900" loading="eager" />
+  </div>
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Canton, TX mobile RV exterior care</p>
       <h1>Premium Mobile RV Detailing in Canton, TX</h1>
       <p class="hero-lede">
-        Professional RV washing, wax soap hand drying, roof cleaning, black streak removal,
+        Professional RV washing, wax soap and hand drying, roof cleaning, black streak removal,
         awning care, and custom quote requests wherever your RV is parked.
       </p>
       <div class="hero-actions">
@@ -24,14 +26,9 @@ const quoteAction = getQuoteAction();
         >
           {quoteAction.label}
         </a>
-        <a class="btn btn-glass btn-large" href="/contact">Quote Checklist</a>
+        <a class="btn btn-glass btn-large" href="/services">View Services</a>
       </div>
       <TrustChips />
-    </div>
-
-    <div class="hero-media" aria-label="Mobile RV Detailers exterior RV photo">
-      <img src={site.images.hero} alt="Clean Class C RV exterior used for Mobile RV Detailers hero image" width="900" height="600" loading="eager" />
-      <div class="photo-badge">Mobile RV exterior care</div>
     </div>
   </div>
 </section>

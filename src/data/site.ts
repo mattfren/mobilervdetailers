@@ -23,7 +23,7 @@ export const site = {
     county: "Van Zandt County"
   },
   quoteFormUrl: "https://tally.so/r/xXvkqJ",
-  bookingUrl: "/contact",
+  bookingUrl: "",
   paymentUrl: "https://pay.mobilervdetailers.com/",
   googleBusinessUrl: "https://www.google.com/maps/search/?api=1&query=Mobile%20RV%20Detailers%20Canton%20TX",
   googleReviewsUrl: "https://g.page/r/Caj5p3wjHiU9EAI/review",
@@ -78,12 +78,21 @@ export const site = {
   ]
 };
 
+export const launchApprovals = {
+  pricesApproved: false,
+  careClubApproved: false,
+  reviewsApproved: false,
+  licensedInsuredApproved: false
+};
+
 export type FaqItem = {
   question: string;
   answer: string;
 };
 
 export const isTodoLink = (url?: string) => !url || url === "#todo";
+
+export const isConfiguredUrl = (url?: string) => !isTodoLink(url);
 
 export const getQuoteAction = () => {
   const href = !isTodoLink(site.quoteFormUrl) ? site.quoteFormUrl : "/contact";
@@ -130,6 +139,10 @@ export const localBusinessJsonLd = () => {
     (url) => !isTodoLink(url)
   );
 
+  const description = launchApprovals.careClubApproved
+    ? "Premium mobile RV washing, roof or awning care, black streak removal, Full Exterior Detail packages, RV Care Club membership, and custom RV detail requests based in Canton, Texas."
+    : "Premium mobile RV washing, roof or awning care, black streak removal, Full Exterior Detail packages, and custom RV detail requests based in Canton, Texas.";
+
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -137,9 +150,8 @@ export const localBusinessJsonLd = () => {
     url: site.baseUrl,
     telephone: site.phone,
     image: absoluteUrl(site.images.hero),
-    priceRange: "Starting at $300",
-    description:
-      "Premium mobile RV washing, roof or awning care, black streak removal, Full Exterior Detail packages, RV Care Club membership, and custom RV detail requests based in Canton, Texas.",
+    ...(launchApprovals.pricesApproved ? { priceRange: "Quote-based" } : {}),
+    description,
     areaServed: site.serviceAreas.map((area) => ({
       "@type": "City",
       name: area

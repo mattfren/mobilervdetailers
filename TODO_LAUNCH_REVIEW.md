@@ -1,42 +1,44 @@
 # Launch Review - Mobile RV Detailers
 
-Current status: production-ready for Cloudflare Pages from the static website repo.
+Current status: Cloudflare Pages preview is deployed and the static site is launch-ready for owner review. Production DNS cutover for `mobilervdetailers.com` and `www.mobilervdetailers.com` is still owner-controlled.
 
-This file is kept as the launch-review record required by the project instructions. It should list only true operational decisions or future enhancements, not blockers already solved in the site.
+This file is the launch-review record required by the project instructions. It lists only true operational decisions, remaining approvals, and future enhancements.
 
 ## Verified For Launch
 
 - Static Astro site only.
 - `npm run build` outputs to `dist`.
+- `npm run audit:production` passes.
 - Quote requests use the published Tally form: `https://tally.so/r/xXvkqJ`.
 - Phone and text actions use `(903) 502-4242` / `+19035024242`.
-- Payment link is presented as invoice/payment-request only: `https://pay.mobilervdetailers.com/`.
-- Google Business, Google review, Facebook, Instagram, and Yelp links are configured in `src/data/site.ts`.
+- Payment link is shown only as an invoice/payment-request action: `https://pay.mobilervdetailers.com/`.
+- Google Business, Facebook, Instagram, Yelp, Messenger, and Google review URLs are configured in `src/data/site.ts`.
 - Canton, TX is the confirmed base.
 - Service-area language uses approximate drive-time zones instead of unsupported city pages.
 - Customer-location water and electricity are stated as required.
-- Package ladder is aligned to the approved model:
-  - Normal Wash: starting at `$300` / `$10 per ft`
-  - Wash + Roof or Awning: starting at `$450` / `$15 per ft`
-  - Full Exterior Detail: starting at `$600` / `$15-$20 per ft`
-  - Custom RV Detail Quote: quote required
-- RV Care Club pricing is listed as `$79/month` up to 35 ft and `$99/month` for 36-45 ft.
+- Package ladder is quote-only unless `pricesApproved=true`:
+  - Normal Wash
+  - Wash + Roof or Awning
+  - Full Exterior Detail
+  - Custom RV Detail Quote
+- RV Care Club pricing, discounts, service credits, savings claims, inspections, and locked-in pricing are hidden unless `careClubApproved=true`.
+- Review snippets/testimonials are hidden unless `reviewsApproved=true`.
+- Licensed/insured language is hidden unless `licensedInsuredApproved=true`.
 - Real supplied photos are used for hero, proof, service cards, gallery, logo, and favicon.
-- Public placeholder SVG assets were removed from `public/images/optimized`.
-- No licensed/insured, certification, guaranteed-result, fake service-area, fake review, or unsupported restoration claims are published as confirmed facts.
+- No certification, guaranteed-result, fake service-area, fake review, exact-price, or unsupported restoration claims are published as confirmed facts.
 - `robots.txt` and `sitemap.xml` are present.
 
-## Owner-Controlled Operational Decisions
+## Owner Approvals Still Needed
 
-These do not block the static site from launching because the site uses safe quote-first wording.
-
-- Public email is intentionally not listed unless the owner decides to publish one later.
-- No public street address is shown; the site identifies Canton, TX as the base.
-- Exact travel-fee amount and route exceptions are confirmed during quote review.
-- Deposit, cancellation, no-show, refund, warranty, satisfaction, and weather-policy details are confirmed during quote/scheduling until formal policy text is approved.
-- Membership service-credit rules and edge-case terms should be confirmed directly before enrollment.
-- Review snippets and selected photo crops should continue to be owner-approved as the gallery evolves.
-- Analytics are not installed. If Cloudflare Web Analytics, GA4, pixels, or cookies are added later, update the privacy policy first.
+- Approve DNS cutover from the old GoDaddy-hosted root/www records to the new Cloudflare Pages project.
+- Confirm whether exact public starting prices should be shown, then set `pricesApproved=true` and restore approved price labels if desired.
+- Confirm whether RV Care Club public pricing, discounts, benefits, inspection language, service-credit rules, and savings examples should be published, then set `careClubApproved=true` only after terms are final.
+- Confirm whether review snippets/testimonials are approved for publication, then set `reviewsApproved=true`.
+- Confirm licensed/insured status before setting `licensedInsuredApproved=true`.
+- Decide whether to keep the current GoDaddy pay link or replace it with a new lightweight manual payment-link flow.
+- Approve any formal deposit, cancellation, no-show, refund, guarantee, weather, and travel-fee policy language before adding stronger terms.
+- Decide whether to publish a public email address.
+- Approve future analytics before adding Cloudflare Web Analytics, GA4, pixels, or cookie-triggering scripts.
 
 ## Production Commands
 

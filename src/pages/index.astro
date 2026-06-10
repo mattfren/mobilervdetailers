@@ -9,15 +9,15 @@ import FAQ from "../components/FAQ.astro";
 import Reviews from "../components/Reviews.astro";
 import { faqs } from "../data/faqs";
 import { galleryItems } from "../data/gallery";
-import { careClub } from "../data/membership";
 import { packages, pricingDisclaimer } from "../data/packages";
 import { services } from "../data/services";
-import { faqJsonLd, getQuoteAction, localBusinessJsonLd, site } from "../data/site";
+import { faqJsonLd, launchApprovals, localBusinessJsonLd, site } from "../data/site";
 
 const title = "Premium Mobile RV Detailing in Canton, TX | Mobile RV Detailers";
 const description =
-  "Mobile RV Detailers provides mobile RV wash packages, roof or awning care, black streak removal, Full Exterior Detail packages, and RV Care Club membership in Canton, TX.";
-const quoteAction = getQuoteAction();
+  launchApprovals.careClubApproved
+    ? "Mobile RV Detailers provides mobile RV wash packages, roof or awning care, black streak removal, Full Exterior Detail packages, and RV Care Club membership in Canton, TX."
+    : "Mobile RV Detailers provides mobile RV wash packages, roof or awning care, black streak removal, Full Exterior Detail packages, and custom RV detail quotes in Canton, TX.";
 
 const process = [
   {
@@ -30,7 +30,7 @@ const process = [
   },
   {
     title: "Get a quote",
-    text: "Pricing is based on the RV, condition, location, and selected add-ons instead of generic menu pricing."
+    text: "The quote is based on the RV, condition, location, selected services, access, utilities, and submitted photos."
   },
   {
     title: "Schedule service",
@@ -91,23 +91,21 @@ const process = [
     <div class="container">
       <div class="section-kicker">
         <p class="eyebrow">Quote-based packages</p>
-        <h2>Clear starting points with quote-based pricing.</h2>
+        <h2>Clear service paths with quote-based scope.</h2>
         <p class="lead">{pricingDisclaimer}</p>
       </div>
       <div class="cards-grid package-grid">
         {packages.map((item, index) => <PackageCard item={item} featured={index === 0} />)}
       </div>
+      {launchApprovals.careClubApproved && (
       <article class="home-care-club-callout">
         <div>
           <p class="eyebrow">RV Care Club</p>
-          <h3>{careClub.title}</h3>
-          <p>
-            {careClub.startingPrice}. Members build monthly service credits, get 15% off detailing services,
-            and receive priority scheduling for year-round RV care.
-          </p>
+          <h3>RV Care Club</h3>
+          <p>Membership details are available after the program terms are confirmed.</p>
         </div>
-        <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>Become a Member</a>
       </article>
+      )}
     </div>
   </section>
 
@@ -138,7 +136,7 @@ const process = [
           and want a mobile service that understands exterior RV needs. Customer-location water and electricity are required for service.
         </p>
       </div>
-      <div class="cards-grid">
+      <div class="side-card-stack">
         <article class="info-card">
           <h3>Mobile by design</h3>
           <p>Service can be planned at a home, RV park, campground, storage facility, or wherever the RV is parked.</p>

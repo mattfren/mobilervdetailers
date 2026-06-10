@@ -16,38 +16,38 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     title: "Exterior Before / After",
-    category: "Before and after",
+    category: "Before / After",
     image: "/images/optimized/proof-before-after.webp",
     alt: "Before and after RV exterior cleaning result",
-    caption: "Side-panel before and after proof showing exterior improvement."
+    caption: "Side-panel comparison showing visible exterior improvement after service."
   },
   {
     title: "Exterior Wash",
     category: "Exterior care",
     image: "/images/optimized/service-exterior-wash.webp",
     alt: "Before and after RV lower side and wheel area exterior wash result",
-    caption: "Exterior wash proof showing cleaner lower side panels, trim, and wheel-area detail."
+    caption: "Lower side panel and wheel-area comparison after exterior wash work."
   },
   {
     title: "Roof Cleaning",
     category: "Roof care",
     image: "/images/optimized/service-roof-cleaning.webp",
     alt: "Before and after RV roof cleaning result",
-    caption: "Roof cleaning proof showing dirt and buildup removal."
+    caption: "Roof surface comparison after condition-based cleaning."
   },
   {
     title: "Front Cap Cleaning",
     category: "Front cap proof",
     image: "/images/optimized/gallery-front-cap-before-after.webp",
     alt: "Before and after RV front cap cleaning result",
-    caption: "Front-facing before and after cleanup for road film and exterior buildup."
+    caption: "Front-cap comparison for road film and exterior buildup."
   },
   {
     title: "Wheel Detail",
     category: "Detail work",
     image: "/images/optimized/gallery-wheel-detail.webp",
     alt: "Before and after RV wheel detailing result",
-    caption: "Wheel detail proof with a cleaner high-visibility finish."
+    caption: "Wheel-area detail comparison with a cleaner high-visibility finish."
   },
   {
     title: "Awning Cleaning",
@@ -65,9 +65,9 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     title: "Rear Exterior",
-    category: "Before and after",
+    category: "Before / After",
     image: "/images/optimized/gallery-rear-exterior-before-after.webp",
     alt: "Before and after rear RV exterior cleaning result",
-    caption: "Rear exterior before and after image showing cleaner exterior panels."
+    caption: "Rear exterior comparison showing cleaner exterior panels."
   }
 ];

@@ -1,10 +1,11 @@
 ---
-import { getBookingAction, getQuoteAction, getTextAction, site } from "../data/site";
+import { getBookingAction, getQuoteAction, getTextAction, isConfiguredUrl, site } from "../data/site";
 import SocialLinks from "./SocialLinks.astro";
 
 const bookingAction = getBookingAction();
 const quoteAction = getQuoteAction();
 const textAction = getTextAction();
+const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
 ---
 
 <footer class="site-footer">
@@ -12,7 +13,7 @@ const textAction = getTextAction();
     <div class="footer-brand">
       <img src={site.images.logo} alt="Mobile RV Detailers" width="190" height="58" />
       <p>
-        Premium mobile RV washing, wax soap hand drying, roof cleaning, black streak removal,
+        Premium mobile RV washing, wax soap and hand drying, roof cleaning, black streak removal,
         and awning care based in Canton, TX.
       </p>
       <SocialLinks compact />
@@ -45,10 +46,10 @@ const textAction = getTextAction();
       <h2 class="footer-heading">Contact</h2>
       <ul class="footer-links">
         <li><a href={site.phoneHref}>{site.phone}</a></li>
-        <li><a href={site.facebookUrl} target="_blank" rel="noreferrer">Facebook</a></li>
+        {isConfiguredUrl(site.facebookUrl) && <li><a href={site.facebookUrl} target="_blank" rel="noreferrer">Facebook</a></li>}
         <li><a href="/service-areas">Canton, TX</a></li>
         <li><a href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a></li>
-        <li><a href={site.paymentUrl} target="_blank" rel="noreferrer">Pay Invoice</a></li>
+        {hasPaymentUrl && <li><a href={site.paymentUrl} target="_blank" rel="noreferrer">Pay Invoice</a></li>}
         <li><a href="/privacy">Privacy</a></li>
         <li><a href="/terms">Terms</a></li>
       </ul>

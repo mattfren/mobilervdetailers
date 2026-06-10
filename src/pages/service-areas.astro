@@ -114,8 +114,29 @@ const extendedRadiusMeters = 70000;
 
     const map = L.map(mapElement, {
       attributionControl: true,
+      zoomControl: false,
       scrollWheelZoom: false
     }).setView(center, 9);
+
+    const ButtonZoomControl = L.Control.extend({
+      onAdd(mapInstance) {
+        const container = L.DomUtil.create("div", "leaflet-bar service-map-zoom");
+        const zoomIn = L.DomUtil.create("button", "", container);
+        const zoomOut = L.DomUtil.create("button", "", container);
+        zoomIn.type = "button";
+        zoomOut.type = "button";
+        zoomIn.setAttribute("aria-label", "Zoom in");
+        zoomOut.setAttribute("aria-label", "Zoom out");
+        zoomIn.textContent = "+";
+        zoomOut.textContent = "-";
+        L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.on(zoomIn, "click", () => mapInstance.zoomIn());
+        L.DomEvent.on(zoomOut, "click", () => mapInstance.zoomOut());
+        return container;
+      }
+    });
+
+    new ButtonZoomControl({ position: "topleft" }).addTo(map);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',

@@ -11,16 +11,14 @@ export const membershipPackages: MembershipPackage[] = [
   {
     title: "Normal Wash",
     eyebrow: "Road-ready exterior",
-    startingPrice: "Starting at $300",
-    perFootPrice: "Starting at $10/ft",
+    startingPrice: "Quote required",
     summary: "Keep your RV looking clean and road-ready.",
     includes: ["Hand wash exterior", "Bug removal", "Wheels cleaned", "Tire dressing", "Final rinse and spot check"]
   },
   {
     title: "Wash + Roof or Awning",
     eyebrow: "Popular maintenance",
-    startingPrice: "Starting at $450",
-    perFootPrice: "Starting at $15/ft",
+    startingPrice: "Quote required",
     summary: "Our most popular maintenance add-on package.",
     includes: [
       "Everything in Normal Wash",
@@ -32,8 +30,7 @@ export const membershipPackages: MembershipPackage[] = [
   {
     title: "Full Exterior Detail",
     eyebrow: "Complete exterior",
-    startingPrice: "Starting at $600",
-    perFootPrice: "Starting at $15-$20/ft",
+    startingPrice: "Quote required",
     summary: "The complete exterior package for wash, roof, awning, and condition-based exterior attention.",
     includes: [
       "Everything in Normal Wash",
@@ -48,25 +45,21 @@ export const membershipPackages: MembershipPackage[] = [
 
 export const careClub = {
   title: "RV Care Club",
-  eyebrow: "Most popular",
-  startingPrice: "Starting at $79/month",
+  eyebrow: "Pending approval",
+  startingPrice: "Pending owner approval",
   summary:
-    "Protect your RV year-round while saving on every service. Build service credits every month and enjoy exclusive member benefits.",
+    "Membership details are not published until pricing, benefits, service-credit rules, and terms are approved.",
   benefits: [
-    "Earn service credits every month",
-    "15% off detailing services",
-    "Priority scheduling",
-    "Annual roof and seal inspection",
-    "Storm damage inspections",
-    "Locked-in member pricing",
-    "Cancel anytime"
+    "Benefits pending owner approval",
+    "Terms pending owner approval",
+    "Enrollment pending owner approval"
   ],
-  pricing: ["Up to 35 ft - $79/month", "36-45 ft - $99/month"],
+  pricing: ["Pending owner approval"],
   savingsExample: {
-    title: "40 ft RV Exterior Wash",
-    retail: "Retail Price: $400",
-    member: "Member Price: $340",
-    savings: "You save $60 every visit."
+    title: "Savings example pending approval",
+    retail: "Retail price pending approval",
+    member: "Member price pending approval",
+    savings: "Savings claim pending approval"
   },
-  annualSavings: "Average member saves $150-$500+ per year while keeping their RV in better condition."
+  annualSavings: "Annual savings claim pending approval."
 };

@@ -78,13 +78,13 @@ The first install surfaced one moderate Astro advisory. Astro was upgraded to `^
 - Quote-first flow is the safest default.
 - Service Areas now uses a guide with two approximate drive-time zones from Canton: about 30 minutes with no travel fee and about 1 hour with a travel fee.
 - Service Areas now uses a client-side Leaflet/OpenStreetMap map centered on Canton with map-native service circles; the site still has no backend or custom routing logic.
-- Starting package prices and RV Care Club membership pricing are now shown from `mobile-rv-detailers-membership-section.md`.
+- Starting package prices are hidden until `pricesApproved=true`.
+- RV Care Club pricing, discounts, benefits, savings claims, inspections, and locked-in pricing are hidden until `careClubApproved=true`.
 - Quote requests route to the published Tally form.
 - Booking intentionally routes to the contact page because new work starts with quote review, not direct scheduling.
 - Google Business and exact Google review links are published. Public email is not published yet.
 - Yelp, Facebook, Instagram, Google Business, Google Reviews, and payment links are configured.
-- The social proof section now uses an Instagram-style local photo grid and a slow rotating Facebook recommendation gallery.
-- All five public Facebook recommendation snippets visible in the current GoDaddy-era Mobile RV Detailers review widget are included and should be owner-approved before launch.
+- Review/testimonial sections are hidden until `reviewsApproved=true`.
 - No licensed/insured, certification, guarantee, or faith-based claims are published as confirmed facts.
 - The approved founder and family-business story is published.
 - Canton, TX is the confirmed base; drive-time zones are shown as approximate and quote-confirmed instead of fixed city lists.
@@ -94,11 +94,11 @@ The first install surfaced one moderate Astro advisory. Astro was upgraded to `^
 - `npm run build` passes.
 - `npm run audit:production` passes.
 - `npm audit --audit-level=moderate` passes with zero vulnerabilities.
-- Browser QA checked desktop `1440x1000`, tablet `768x1000`, and mobile `390x900`.
+- Browser QA checked `320`, `390`, `768`, `1024`, and `1440` widths.
 - Required routes were opened in the browser.
-- Route QA confirmed unique page titles, canonical URLs, JSON-LD presence, no missing image alt attributes, no horizontal overflow, and no console errors.
+- Route QA confirmed unique page titles, canonical URLs, Open Graph metadata, JSON-LD presence, no missing image alt attributes, no horizontal overflow, no dead internal links, no hidden-pricing/review/Care Club leaks, and no console errors.
 - Mobile menu opens and exposes Home, Services, Gallery, About, Service Areas, Contact, Book, Call, and Request Quote links.
-- QA screenshots are saved in `qa-screenshots/`.
+- QA screenshots are saved in `qa-screenshots/final-polish/`.
 
 ## Run locally
 
@@ -107,11 +107,7 @@ npm install
 npm run dev
 ```
 
-Local preview used during QA:
-
-```text
-http://127.0.0.1:4321/
-```
+Local preview was used during QA through the Astro dev server.
 
 ## Build for production
 
@@ -139,11 +135,11 @@ Node version: 22.16.0
 
 The repo includes `wrangler.jsonc` with the Pages output directory. Workers-only settings such as `observability` do not belong in this static Pages config.
 
-Test the Cloudflare preview URL before pointing `mobilervdetailers.com` or `www.mobilervdetailers.com` at the new site.
+Cloudflare Pages project `mobile-rv-detailers` is connected to `mattfren/mobilervdetailers` and builds from `main`.
 
 ## Next steps
 
-1. Connect Cloudflare Pages with build command `npm run build` and output directory `dist`.
-2. Test the Cloudflare preview URL before DNS cutover.
-3. Preserve existing email DNS records before any domain DNS change.
+1. Review the Cloudflare Pages preview.
+2. Preserve existing email DNS records before any domain DNS change.
+3. Attach `mobilervdetailers.com` and `www.mobilervdetailers.com` to the Pages project when ready for production cutover.
 4. Re-run `npm run audit:production` after content and asset updates.

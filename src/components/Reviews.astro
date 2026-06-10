@@ -1,10 +1,11 @@
 ---
 import { facebookReviews, facebookSummary, instagramTiles } from "../data/social";
-import { site } from "../data/site";
+import { launchApprovals, site } from "../data/site";
 
 const rotatingReviews = [...facebookReviews, ...facebookReviews];
 ---
 
+{launchApprovals.reviewsApproved && (
 <section class="social-proof-section" id="social-proof">
   <div class="social-proof-bg" aria-hidden="true">
     <img src="/images/optimized/service-maintenance.webp" alt="" loading="lazy" />
@@ -67,3 +68,4 @@ const rotatingReviews = [...facebookReviews, ...facebookReviews];
     </div>
   </div>
 </section>
+)}

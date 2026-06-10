@@ -44,6 +44,13 @@ if (existsSync(publicDir)) {
 const sourceFiles = existsSync(srcDir)
   ? walk(srcDir, (file) => /\.(astro|ts|js|mjs|css)$/.test(file))
   : [];
+const siteSource = existsSync(join(srcDir, "data", "site.ts"))
+  ? readFileSync(join(srcDir, "data", "site.ts"), "utf8")
+  : "";
+const pricesApproved = /pricesApproved:\s*true/.test(siteSource);
+const careClubApproved = /careClubApproved:\s*true/.test(siteSource);
+const reviewsApproved = /reviewsApproved:\s*true/.test(siteSource);
+const licensedInsuredApproved = /licensedInsuredApproved:\s*true/.test(siteSource);
 
 for (const file of sourceFiles) {
   const text = readFileSync(file, "utf8");
@@ -70,15 +77,43 @@ if (existsSync(distDir)) {
   const foundRequired = Object.fromEntries(requiredText.map((item) => [item, false]));
   const missingInternalLinks = [];
   const forbiddenLiveText = [
+    /Canton,TX/i,
+    /wax soap hand drying/i,
+    /lorem ipsum/i,
+    /localhost/i,
+    /127\.0\.0\.1/i,
+    /#todo/i,
     /Full Detail/i,
     /Wash \+ Roof & Awning/i,
     /bring our own water/i,
     /online booking/i,
     /customer account/i,
-    /payment required/i,
-    /licensed and insured/i
+    /payment required/i
   ];
+  if (!pricesApproved) forbiddenLiveText.push(/\$[0-9]/);
+  if (!careClubApproved) {
+    forbiddenLiveText.push(
+      /RV Care Club/i,
+      /member discount/i,
+      /service credits/i,
+      /locked-in/i,
+      /locked in/i,
+      /annual inspection/i,
+      /storm damage inspection/i
+    );
+  }
+  if (!reviewsApproved) {
+    forbiddenLiveText.push(
+      /100% recommend/i,
+      /Facebook recommendation/i,
+      /View all 5 reviews/i,
+      /Read full review/i,
+      /shared by real customers/i
+    );
+  }
+  if (!licensedInsuredApproved) forbiddenLiveText.push(/licensed and insured/i);
   const forbiddenMatches = [];
+  const pageTitles = new Map();
 
   const internalTargetExists = (href) => {
     const clean = href.split("#")[0].replace(/\/$/, "");
@@ -102,6 +137,22 @@ if (existsSync(distDir)) {
     if (!html.includes("<title>")) fail(`${relativeFile} is missing a title tag.`);
     if (!html.includes('name="description"')) fail(`${relativeFile} is missing a meta description.`);
     if (!html.includes('rel="canonical"')) fail(`${relativeFile} is missing a canonical URL.`);
+    if (!html.includes('property="og:title"')) fail(`${relativeFile} is missing Open Graph title.`);
+    if (!html.includes('property="og:description"')) fail(`${relativeFile} is missing Open Graph description.`);
+    if (!html.includes('property="og:image"')) fail(`${relativeFile} is missing Open Graph image.`);
+    if (!html.includes('type="application/ld+json"')) fail(`${relativeFile} is missing JSON-LD.`);
+
+    const titleMatch = html.match(/<title>(.*?)<\/title>/);
+    if (titleMatch) {
+      const pageTitle = titleMatch[1];
+      const existing = pageTitles.get(pageTitle);
+      if (existing) fail(`Duplicate page title: ${existing} and ${relativeFile} both use "${pageTitle}".`);
+      pageTitles.set(pageTitle, relativeFile);
+    }
+
+    for (const match of html.matchAll(/<img\b([^>]*)>/g)) {
+      if (!/\salt=/.test(match[1])) fail(`${relativeFile} has an image without alt text.`);
+    }
 
     for (const match of html.matchAll(/href="([^"]+)"/g)) {
       const href = match[1];

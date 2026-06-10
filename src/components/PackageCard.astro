@@ -1,6 +1,6 @@
 ---
 import type { Package } from "../data/packages";
-import { getQuoteAction } from "../data/site";
+import { launchApprovals } from "../data/site";
 
 interface Props {
   item: Package;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { item, featured = false } = Astro.props;
-const quoteAction = getQuoteAction();
+const statusLabel = launchApprovals.pricesApproved ? item.priceLabel : "Quote required";
 ---
 
 <article class:list={["package-card", featured && "is-featured"]}>
@@ -20,7 +20,6 @@ const quoteAction = getQuoteAction();
     {item.includes.map((include) => <li>{include}</li>)}
   </ul>
   <div class="package-footer">
-    <span>{item.priceLabel}</span>
-    <a href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
+    <span>{statusLabel}</span>
   </div>
 </article>

@@ -1,5 +1,5 @@
 ---
-import { isTodoLink, site } from "../data/site";
+import { isTodoLink, launchApprovals, site } from "../data/site";
 
 interface Props {
   compact?: boolean;
@@ -43,7 +43,7 @@ const links = [
     color: "#D32323",
     ariaLabel: "Find Mobile RV Detailers on Yelp"
   }
-].filter((link) => !isTodoLink(link.href));
+].filter((link) => !isTodoLink(link.href) && (link.label !== "Reviews" || launchApprovals.reviewsApproved));
 ---
 
 {links.length > 0 && (

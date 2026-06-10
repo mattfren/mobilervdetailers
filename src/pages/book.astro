@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
-import { getBookingAction, getMessengerAction, getQuoteAction, getTextAction, localBusinessJsonLd, site } from "../data/site";
+import { getBookingAction, getMessengerAction, getQuoteAction, getTextAction, isConfiguredUrl, localBusinessJsonLd, site } from "../data/site";
 
 const title = "Book Mobile RV Detailing | Mobile RV Detailers";
 const description =
   "Request an appointment for quote-based mobile RV detailing in Canton, TX after RV details, location, and service scope are confirmed.";
 
-const paymentExternal = site.paymentUrl.startsWith("http");
+const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
+const paymentExternal = hasPaymentUrl && site.paymentUrl.startsWith("http");
 const quoteAction = getQuoteAction();
 const bookingAction = getBookingAction();
 const messengerAction = getMessengerAction();
@@ -32,6 +33,7 @@ const textAction = getTextAction();
         <p>Send the RV details, photos, service location, and water/electricity availability, then schedule the job once the scope is clear.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
+          <a class="btn btn-ghost" href={site.phoneHref}>Call {site.phone}</a>
           <a class="btn btn-ghost" href={textAction.href}>{textAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
         </div>
@@ -39,12 +41,13 @@ const textAction = getTextAction();
 
       <article class="contact-card">
         <h2>Schedule service</h2>
-        <p>Appointment timing is confirmed after the quote, access details, route, and weather window are reviewed.</p>
+        <p>There is no public self-scheduling calendar. Appointment timing is confirmed after the quote, access details, route, and weather window are reviewed.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a>
         </div>
       </article>
 
+      {hasPaymentUrl && (
       <article class="contact-card">
         <h2>Pay invoice</h2>
         <p>Use the external payment link only after an invoice or payment request has been issued.</p>
@@ -52,6 +55,7 @@ const textAction = getTextAction();
           <a class="btn btn-ghost" href={site.paymentUrl} target={paymentExternal ? "_blank" : undefined} rel={paymentExternal ? "noreferrer" : undefined}>Pay Invoice</a>
         </div>
       </article>
+      )}
 
       <article class="contact-card">
         <h2>Scheduling policy</h2>

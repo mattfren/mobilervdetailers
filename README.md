@@ -19,7 +19,7 @@ npm run build
 npm run audit:production
 ```
 
-`npm run audit:production` builds the site and checks generated output for required package language, CTA links, internal link health, metadata, robots/sitemap files, missing local assets, and public placeholder leakage.
+`npm run audit:production` builds the site and checks generated output for required package language, CTA links, internal link health, metadata, robots/sitemap files, missing local assets, public placeholder leakage, and hidden-claim safeguards.
 
 ## Deployment
 
@@ -47,12 +47,15 @@ All customer-facing action links live in `src/data/site.ts`.
 - Phone/text: `(903) 502-4242`
 - Payment: external invoice/payment portal only after a quote or invoice is confirmed
 - Social/review links: Facebook, Instagram, Yelp, Google Business, Google Reviews
+- Approval flags: prices, RV Care Club, reviews, and licensed/insured language are controlled in `src/data/site.ts`
 
 Cloudflare Pages output settings live in `wrangler.jsonc`. Keep Workers-only settings such as `observability` out of this static Pages config.
 
 ## Launch Guardrails
 
-- Use starting prices only; final pricing is quote-confirmed.
+- Do not publish exact prices unless `pricesApproved=true`.
+- Do not publish RV Care Club pricing, discounts, savings claims, inspections, or member benefits unless `careClubApproved=true`.
+- Do not publish review/testimonial content unless `reviewsApproved=true`.
 - Customer-location water and electricity are currently required.
 - Do not claim licensed/insured status unless separately confirmed.
 - Do not promise guaranteed results or "like new" restoration.

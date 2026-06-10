@@ -86,38 +86,34 @@ Core services:
 - Awning Cleaning
 - Bug & Tar Removal
 - Full Exterior Detail
-- RV Care Club membership
 - Custom Interior Requests by case-by-case review
+- RV Care Club membership is not public-facing until owner approval
 
 ## Service Details
 
 Exterior RV Wash:
 
 - RV-focused exterior washing for dirt, dust, bugs, road film, and general buildup
-- Includes hand wash exterior, bug removal, wheels cleaned, tire dressing, final rinse, and spot check in the priced package
-- Starting at $300
-- Starting at $10/ft
+- Includes hand wash exterior, bug removal, wheels cleaned, tire dressing, final rinse, and spot check when included in the quoted scope
+- Quote required
 
 Normal Wash:
 
 - Standard exterior wash package for a cleaner, road-ready RV exterior
 - Includes hand wash exterior, bug removal, wheels cleaned, tire dressing, final rinse, and spot check
-- Starting at $300
-- Starting at $10/ft
+- Quote required
 
 Wash + Roof or Awning:
 
 - Maintenance add-on package for exterior wash plus roof or awning work
 - Includes everything in Normal Wash, roof cleaning or awning cleaning, black streak treatment, and mold/mildew removal
-- Starting at $450
-- Starting at $15/ft
+- Quote required
 
 Full Exterior Detail:
 
 - Complete exterior package
 - Includes Normal Wash plus roof cleaning, awning cleaning, black streak and bug/tar attention, window detailing, and final hand-dry finish when applicable
-- Starting at $600
-- Starting at $15-$20/ft
+- Quote required
 - Photos and condition review are required because the scope depends on RV condition, access, weather, and requested service areas
 - Does not include polishing, buffing, ceramic coating, paint correction, gel coat restoration, heavy compounding, or full oxidation restoration
 
@@ -153,45 +149,22 @@ Interior Requests:
 
 ## RV Care Club
 
-RV Care Club positioning:
-
-Protect the RV year-round while saving on every service. Members build service credits every month and receive member benefits.
-
-Starting membership pricing:
-
-- Up to 35 ft: $79/month
-- 36-45 ft: $99/month
-
-Member benefits:
-
-- Earn service credits every month
-- 15% off detailing services
-- Priority scheduling
-- Annual roof and seal inspection
-- Storm damage inspections
-- Locked-in member pricing
-- Cancel anytime
-
-Example:
-
-- 40 ft RV Exterior Wash
-- Retail Price: $400
-- Member Price: $340
-- Savings: $60 per visit
+RV Care Club is not currently public-facing on the new website.
 
 Call handling rule:
 
-If caller asks for exact membership terms, service-credit rules, cancellation details, or locked-in pricing exceptions, collect their question and say the owner will confirm those details before enrollment.
+If caller asks about membership, collect their question and say the owner will confirm whether a membership option is available before enrollment. Do not quote membership pricing, discounts, service-credit rules, inspection benefits, savings examples, or fixed member pricing.
 
 ## Pricing Guidance
 
-Published starting points:
+Public website pricing status:
 
-- Normal Wash: starting at $300 / starting at $10 per ft
-- Wash + Roof or Awning: starting at $450 / starting at $15 per ft
-- Full Exterior Detail: starting at $600 / starting at $15-$20 per ft
-- RV Care Club: starting at $79/month
-- 36-45 ft RV Care Club: $99/month
+- Exact public prices are hidden on the new website.
+- Normal Wash: quote required
+- Wash + Roof or Awning: quote required
+- Full Exterior Detail: quote required
+- Custom RV Detail Quote: quote required
+- RV Care Club: do not quote unless the owner separately approves membership terms
 
 Final pricing depends on:
 
@@ -302,7 +275,7 @@ If caller wants a quote:
 
 If caller asks for price:
 
-"We publish starting prices, but final pricing depends on RV length, condition, location, water/electricity availability, access, weather, and selected services. Normal Wash starts at $300, Wash + Roof or Awning starts at $450, and Full Exterior Detail starts at $600. The best next step is the quote form so we can review photos and the exact scope."
+"The new website uses quote-required service categories instead of public starting prices. Final pricing depends on RV length, condition, location, water/electricity availability, access, weather, photos, and selected services. The best next step is the quote form so Mobile RV Detailers can review the exact scope."
 
 If caller asks to book now:
 

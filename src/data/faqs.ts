@@ -32,9 +32,9 @@ export const faqs: FaqItem[] = [
       "Interiors are not a standard package yet. They can be discussed case by case when the photos, scope, expectations, and price make sense."
   },
   {
-    question: "How do you price RV detailing?",
+    question: "How do quotes work?",
     answer:
-      "Service packages have starting prices, and final pricing depends on RV length, condition, service location, roof or awning condition, black streaks, bugs, road film, and custom requests."
+      "The quote is based on RV length, condition, service location, roof or awning condition, black streaks, bugs, road film, access, utilities, and custom requests. Photos help confirm the right scope before scheduling."
   },
   {
     question: "Do you need water or power?",
