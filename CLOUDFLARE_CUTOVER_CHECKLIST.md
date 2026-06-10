@@ -10,7 +10,7 @@ Date: June 10, 2026
 - Build output directory: `dist`
 - Node version environment variable: `22.16.0`
 - Current Pages URL: `https://mobile-rv-detailers.pages.dev/`
-- Latest verified deployment: `24181ca5`, commit `2ceffef9490901e00b783c01b59e2a600c60e7c6`
+- Latest production deployment should be checked in Cloudflare Pages before cutover; the project is connected to `main` and deploys on each push.
 - Zone: `mobilervdetailers.com`
 - Zone status: active
 - Cloudflare nameservers: `aragorn.ns.cloudflare.com`, `serenity.ns.cloudflare.com`
