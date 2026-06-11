@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
-import { getBookingAction, getMessengerAction, getQuoteAction, isConfiguredUrl, localBusinessJsonLd, site } from "../data/site";
+import { getMessengerAction, getQuoteAction, isConfiguredUrl, localBusinessJsonLd, site } from "../data/site";
 
 const title = "Book Mobile RV Detailing | Mobile RV Detailers";
 const description =
@@ -10,7 +10,6 @@ const description =
 const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
 const paymentExternal = hasPaymentUrl && site.paymentUrl.startsWith("http");
 const quoteAction = getQuoteAction();
-const bookingAction = getBookingAction();
 const messengerAction = getMessengerAction();
 ---
 
@@ -19,7 +18,7 @@ const messengerAction = getMessengerAction();
     <div class="container">
       <p class="eyebrow">Book</p>
       <h1>Quote first, then schedule.</h1>
-      <p>Send the details, confirm the quote, then lock in the appointment.</p>
+      <p>Send the details, confirm the quote, then set the appointment.</p>
     </div>
   </section>
 
@@ -27,7 +26,7 @@ const messengerAction = getMessengerAction();
     <div class="container contact-grid">
       <article class="contact-card">
         <h2>Request a quote first</h2>
-        <p>The quote form handles details, photos, location, and utilities.</p>
+        <p>Use the form for RV details, photos, location, utilities, and timing.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
@@ -35,11 +34,8 @@ const messengerAction = getMessengerAction();
       </article>
 
       <article class="contact-card">
-        <h2>Schedule service</h2>
-        <p>Appointments are set after the quote, access, route, and weather window are reviewed.</p>
-        <div class="contact-actions">
-          <a class="btn btn-red" href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a>
-        </div>
+        <h2>Scheduling comes next</h2>
+        <p>Appointments are set after the quote, route, access, and weather window are reviewed.</p>
       </article>
 
       {hasPaymentUrl && (
@@ -54,7 +50,7 @@ const messengerAction = getMessengerAction();
 
       <article class="contact-card">
         <h2>Scheduling policy</h2>
-        <p>Deposit, cancellation, and refund details are confirmed before scheduling.</p>
+        <p>Deposit, cancellation, and refund details are confirmed before the appointment is scheduled.</p>
         <div class="contact-actions">
           <a class="btn btn-ghost" href="/terms/">View Terms</a>
         </div>

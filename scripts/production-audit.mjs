@@ -96,6 +96,7 @@ if (existsSync(distDir)) {
     /customer account/i,
     /payment required/i,
     /Text Photos/i,
+    /Request Scheduling/i,
     /sms:\+19035024242/i
   ];
   if (!pricesApproved) forbiddenLiveText.push(/\$[0-9]/);

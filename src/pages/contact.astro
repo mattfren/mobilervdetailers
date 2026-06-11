@@ -25,7 +25,7 @@ const messengerAction = getMessengerAction();
     <div class="container contact-grid">
       <article class="contact-card">
         <h2>Request quote</h2>
-        <p>The form collects RV details, photos, location, utilities, and timing.</p>
+        <p>Use the form for RV details, photos, location, utilities, and timing.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
@@ -37,14 +37,6 @@ const messengerAction = getMessengerAction();
         <p>See current work, updates, and business profiles.</p>
         <div class="contact-actions">
           <SocialLinks compact />
-        </div>
-      </article>
-
-      <article class="contact-card">
-        <h2>Quote checklist</h2>
-        <p>Have your RV length, parked location, services wanted, utility access, and problem-area photos ready.</p>
-        <div class="contact-actions">
-          <a class="btn btn-ghost" href="/services/">View Services</a>
         </div>
       </article>
     </div>

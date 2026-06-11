@@ -1,17 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import ServiceCard from "../components/ServiceCard.astro";
 import PackageCard from "../components/PackageCard.astro";
 import GalleryGrid from "../components/GalleryGrid.astro";
 import CTASection from "../components/CTASection.astro";
-import FAQ from "../components/FAQ.astro";
-import Reviews from "../components/Reviews.astro";
-import { faqs } from "../data/faqs";
 import { galleryItems } from "../data/gallery";
 import { packages, pricingDisclaimer } from "../data/packages";
-import { services } from "../data/services";
-import { faqJsonLd, launchApprovals, localBusinessJsonLd, site } from "../data/site";
+import { launchApprovals, localBusinessJsonLd, site } from "../data/site";
 
 const title = "Premium Mobile RV Detailing in Canton, TX | Mobile RV Detailers";
 const description =
@@ -22,20 +17,20 @@ const description =
 const process = [
   {
     title: "Request a quote",
-    text: "Send the RV details, location, utilities, and photos in one form."
+    text: "Share the RV, location, water and electricity access, and photos."
   },
   {
     title: "Confirm the scope",
-    text: "The quote is matched to the RV size, condition, access, and service needs."
+    text: "Get the right wash, add-on, or full exterior detail."
   },
   {
     title: "Get on the schedule",
-    text: "Once approved, service is planned around route, access, and weather."
+    text: "Approve the quote, then plan the route and weather window."
   }
 ];
 ---
 
-<BaseLayout title={title} description={description} path="/" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs.slice(0, 4))]}>
+<BaseLayout title={title} description={description} path="/" jsonLd={[localBusinessJsonLd()]}>
   <Hero />
 
   <section class="section section-light">
@@ -56,26 +51,12 @@ const process = [
         <p class="eyebrow">Before and after proof</p>
         <h2>Visible exterior cleanup.</h2>
         <p class="lead">
-          Real RV photos show the goal: cleaner panels, brighter trim, clearer wheels, and better-looking travel surfaces.
+          Real RV photos. Cleaner panels, brighter trim, clearer wheels, and better-looking travel surfaces.
         </p>
         <ul class="proof-list">
-          <li>Realistic expectations before the quote.</li>
-          <li>Roof, awning, wheels, front cap, and panels reviewed by condition.</li>
+          <li>Exterior, roof, awning, wheels, and front cap reviewed by condition.</li>
           <li>Scope matched to what the RV actually needs.</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-kicker">
-        <p class="eyebrow">RV-specific exterior care</p>
-        <h2>Exterior RV care where the rig sits.</h2>
-        <p class="lead">Wash, roof, awning, black streak, bug, tar, and finish work by quote.</p>
-      </div>
-      <div class="cards-grid">
-        {services.slice(0, 6).map((service) => <ServiceCard service={service} />)}
       </div>
     </div>
   </section>
@@ -106,7 +87,7 @@ const process = [
     <div class="container">
       <div class="section-kicker">
         <p class="eyebrow">How it works</p>
-        <h2>Simple quote-first process.</h2>
+        <h2>Three steps. No shop drop-off.</h2>
       </div>
       <div class="process-grid">
         {process.map((item) => (
@@ -119,29 +100,6 @@ const process = [
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container split-section">
-      <div>
-        <p class="eyebrow">Why Mobile RV Detailers</p>
-        <h2>Premium exterior care without moving the RV.</h2>
-        <p class="lead">
-          Built for owners who want the RV cleaned at home, storage, RV park, campground, or wherever it is parked.
-          Customer-location water and electricity are required.
-        </p>
-      </div>
-      <div class="side-card-stack">
-        <article class="info-card">
-          <h3>Mobile by design</h3>
-          <p>Planned around the parked RV, access, utilities, and route.</p>
-        </article>
-        <article class="info-card">
-          <h3>RV-first scope</h3>
-          <p>Exterior wash, roof or awning care, streaks, bugs, tar, wax soap, and hand dry.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section about-home-section">
     <div class="container split-section">
       <div>
@@ -150,11 +108,8 @@ const process = [
         <p class="lead">
           Founded in 2021 by Carl and Jana Fields after they struggled to find RV detailing for their own rig.
         </p>
-        <p>
-          The work stays practical: exterior washing, roof cleaning, awning cleaning, black streak treatment, bug and tar removal, and custom requests when the scope is clear.
-        </p>
         <div class="hero-actions">
-          <a class="btn btn-red" href="/about/">Read About Mobile RV Detailers</a>
+          <a class="btn btn-red" href="/about/">Read the Story</a>
           <a class="btn btn-ghost" href="/service-areas/">Service Areas</a>
         </div>
       </div>
@@ -176,21 +131,9 @@ const process = [
       <div class="section-kicker">
         <p class="eyebrow">Gallery preview</p>
         <h2>Real RV exterior work.</h2>
-        <p class="lead">Exterior wash, roof, awning, front-cap, wheel, and before/after photos.</p>
+        <p class="lead">Before/after proof, roofs, awnings, wheels, and finish work.</p>
       </div>
       <GalleryGrid items={galleryItems.slice(0, 3)} />
-    </div>
-  </section>
-
-  <Reviews />
-
-  <section class="section">
-    <div class="container">
-      <div class="section-kicker center">
-        <p class="eyebrow">Common questions</p>
-        <h2>Quick answers before you quote.</h2>
-      </div>
-      <FAQ items={faqs.slice(0, 4)} />
     </div>
   </section>
 

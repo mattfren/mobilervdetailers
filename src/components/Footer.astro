@@ -1,8 +1,7 @@
 ---
-import { getBookingAction, getMessengerAction, getQuoteAction, isConfiguredUrl, site } from "../data/site";
+import { getMessengerAction, getQuoteAction, isConfiguredUrl, site } from "../data/site";
 import SocialLinks from "./SocialLinks.astro";
 
-const bookingAction = getBookingAction();
 const messengerAction = getMessengerAction();
 const quoteAction = getQuoteAction();
 const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
@@ -12,29 +11,27 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src={site.images.logo} alt="Mobile RV Detailers" width="190" height="58" />
-      <p>Mobile RV exterior washing, roof or awning care, black streak removal, and full exterior detail quotes based in Canton, TX.</p>
+      <p>Mobile RV exterior detailing based in Canton, TX.</p>
       <SocialLinks compact />
-      <div class="footer-cta-row">
-        <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-      </div>
     </div>
 
     <div>
       <h2 class="footer-heading">Explore</h2>
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-        <li><a href="/book/">Book</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+        <li><a href="/about/">About</a></li>
       </ul>
     </div>
 
     <div>
       <h2 class="footer-heading">Contact</h2>
       <ul class="footer-links">
-        <li><a href={site.phoneHref}>{site.phone}</a></li>
+        <li><a href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>Request Quote</a></li>
         <li><a href={messengerAction.href} target="_blank" rel="noreferrer">Facebook Messenger</a></li>
-        <li><a href="/service-areas/">Canton service area</a></li>
-        <li><a href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a></li>
+        <li><a href={site.phoneHref}>{site.phone}</a></li>
         {hasPaymentUrl && <li><a href={site.paymentUrl} target="_blank" rel="noreferrer">Pay Invoice</a></li>}
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/terms/">Terms</a></li>
@@ -43,6 +40,6 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
   </div>
   <div class="container footer-bottom">
     <p>&copy; {new Date().getFullYear()} Mobile RV Detailers. All rights reserved.</p>
-    <p>Canton, TX mobile RV detailing by appointment.</p>
+    <p>Canton, TX | By appointment.</p>
   </div>
 </footer>

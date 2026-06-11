@@ -123,7 +123,7 @@ export const getBookingAction = () => {
 
   return {
     href,
-    label: external ? "Book Online" : "Request Scheduling",
+    label: external ? "Book Online" : "Request Quote",
     external
   };
 };
