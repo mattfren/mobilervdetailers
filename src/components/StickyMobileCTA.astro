@@ -1,11 +1,9 @@
 ---
-import { getQuoteAction, getTextAction } from "../data/site";
+import { getQuoteAction } from "../data/site";
 
 const quoteAction = getQuoteAction();
-const textAction = getTextAction();
 ---
 
 <div class="sticky-mobile-cta" aria-label="Quick contact actions">
-  <a href={textAction.href}>Text Photos</a>
   <a href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>Request Quote</a>
 </div>

@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-import { getMessengerAction, getQuoteAction, getTextAction, localBusinessJsonLd } from "../data/site";
+import { getMessengerAction, getQuoteAction, localBusinessJsonLd } from "../data/site";
 
 const title = "Request an RV Detailing Quote | Mobile RV Detailers";
 const description =
@@ -10,7 +10,6 @@ const description =
 
 const quoteAction = getQuoteAction();
 const messengerAction = getMessengerAction();
-const textAction = getTextAction();
 ---
 
 <BaseLayout title={title} description={description} path="/contact" jsonLd={localBusinessJsonLd()}>
@@ -18,9 +17,7 @@ const textAction = getTextAction();
     <div class="container">
       <p class="eyebrow">Contact</p>
       <h1>Request an RV detailing quote.</h1>
-      <p>
-        The strongest quote starts with RV length, condition, parking location, requested services, and photos of the areas that need attention.
-      </p>
+      <p>Send the RV details once. Get a clear quote before scheduling.</p>
     </div>
   </section>
 
@@ -28,17 +25,16 @@ const textAction = getTextAction();
     <div class="container contact-grid">
       <article class="contact-card">
         <h2>Request quote</h2>
-        <p>Use the quote form for RV details, photos, service location notes, water/electricity availability, and preferred timing.</p>
+        <p>The form collects RV details, photos, location, utilities, and timing.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-          <a class="btn btn-ghost" href={textAction.href}>{textAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
         </div>
       </article>
 
       <article class="contact-card">
         <h2>Connect online</h2>
-        <p>Use the social profiles for current photos, field updates, and online contact options.</p>
+        <p>See current work, updates, and business profiles.</p>
         <div class="contact-actions">
           <SocialLinks compact />
         </div>
@@ -46,7 +42,7 @@ const textAction = getTextAction();
 
       <article class="contact-card">
         <h2>Quote checklist</h2>
-        <p>Have these ready: RV type, length, year/make/model, parked location, services wanted, condition level, water/electricity availability, site permission, and photos of the front, rear, both sides, roof if safely available, awning, wheels, and problem areas.</p>
+        <p>Have your RV length, parked location, services wanted, utility access, and problem-area photos ready.</p>
         <div class="contact-actions">
           <a class="btn btn-ghost" href="/services/">View Services</a>
         </div>
@@ -54,5 +50,5 @@ const textAction = getTextAction();
     </div>
   </section>
 
-  <CTASection title="Ready to clean up the exterior?" text="Send the RV details, location, services needed, and photos so the quote can be planned around the job." />
+  <CTASection title="Ready for a cleaner RV exterior?" text="Start with the quote form. Photos upload there." />
 </BaseLayout>

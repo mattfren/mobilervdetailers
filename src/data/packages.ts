@@ -47,4 +47,4 @@ export const packages: Package[] = [
 ];
 
 export const pricingDisclaimer =
-  "Service categories help frame the quote, and the final scope depends on RV length, condition, service location, roof or awning condition, black streaks, bugs, road film, and any custom requests. Photos help Mobile RV Detailers quote accurately.";
+  "Final scope depends on RV length, condition, location, roof or awning condition, streaks, bugs, road film, and custom requests. Photos help quote accurately.";

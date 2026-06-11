@@ -1,5 +1,5 @@
 ---
-import { getQuoteAction, getTextAction } from "../data/site";
+import { getQuoteAction } from "../data/site";
 
 interface Props {
   title?: string;
@@ -8,13 +8,12 @@ interface Props {
 }
 
 const {
-  title = "Get a clear RV detailing quote before the work starts.",
-  text = "Send the RV details, location, and photos so Mobile RV Detailers can prepare a clear quote.",
+  title = "Get your RV cleaned without moving it.",
+  text = "Request a quote with your RV details, location, and photos.",
   dark = true
 } = Astro.props;
 
 const quoteAction = getQuoteAction();
-const textAction = getTextAction();
 ---
 
 <section class:list={["cta-section", dark && "cta-section-dark"]}>
@@ -26,7 +25,6 @@ const textAction = getTextAction();
     </div>
     <div class="cta-actions">
       <a class="btn btn-red btn-large" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-      <a class="btn btn-ghost btn-large" href={textAction.href}>{textAction.label}</a>
     </div>
   </div>
 </section>

@@ -78,7 +78,6 @@ if (existsSync(distDir)) {
     "Full Exterior Detail",
     "Custom RV Detail Quote",
     "https://tally.so/r/xXvkqJ",
-    "sms:+19035024242",
     "water and electricity"
   ];
   const foundRequired = Object.fromEntries(requiredText.map((item) => [item, false]));
@@ -95,7 +94,9 @@ if (existsSync(distDir)) {
     /bring our own water/i,
     /online booking/i,
     /customer account/i,
-    /payment required/i
+    /payment required/i,
+    /Text Photos/i,
+    /sms:\+19035024242/i
   ];
   if (!pricesApproved) forbiddenLiveText.push(/\$[0-9]/);
   if (!careClubApproved) {

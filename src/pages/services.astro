@@ -31,15 +31,12 @@ const serviceSchema = services.map((service) => ({
 }));
 ---
 
-<BaseLayout title={title} description={description} path="/services" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs.slice(0, 7)), ...serviceSchema]}>
+<BaseLayout title={title} description={description} path="/services" jsonLd={[localBusinessJsonLd(), faqJsonLd(faqs.slice(0, 5)), ...serviceSchema]}>
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Services</p>
-      <h1>RV exterior care that meets your rig where it is parked.</h1>
-      <p>
-        Mobile RV Detailers offers exterior washing, roof or awning care, black streak removal,
-        Full Exterior Detail packages, and custom quote planning for owners who want practical RV care.
-      </p>
+      <h1>Mobile RV exterior care, quoted clearly.</h1>
+      <p>Choose the starting point. The quote is matched to the RV, condition, access, and photos.</p>
     </div>
   </section>
 
@@ -67,7 +64,7 @@ const serviceSchema = services.map((service) => ({
     <div class="container">
       <div class="section-kicker">
         <p class="eyebrow">Packages</p>
-        <h2>Choose the scope, then confirm the quote.</h2>
+        <h2>Start here.</h2>
         <p class="lead">{pricingDisclaimer}</p>
       </div>
       <div class="cards-grid package-grid">
@@ -80,23 +77,21 @@ const serviceSchema = services.map((service) => ({
     <div class="container split-section">
       <div>
         <p class="eyebrow">Quote inputs</p>
-        <h2>Photos and RV details make the quote stronger.</h2>
-        <p class="lead">
-          Share RV length, condition, service location, where it is parked, available water/electricity, and the exterior areas that need attention.
-        </p>
+        <h2>What the quote needs.</h2>
+        <p class="lead">RV length, location, condition, utilities, and photos of the problem areas.</p>
       </div>
       <div class="side-card-stack">
         <article class="info-card">
           <h3>Condition matters</h3>
-          <p>Age, staining, roof buildup, awning condition, road film, and custom requests can change the scope and timing.</p>
+          <p>Stains, roof buildup, road film, and custom requests can change the scope.</p>
         </article>
         <article class="info-card">
           <h3>Utilities and access matter</h3>
-          <p>Mobile RV Detailers currently requires water and electricity at the customer location, plus permission for mobile washing/detailing where the RV is parked.</p>
+          <p>Water, electricity, space, and site permission are required.</p>
         </article>
         <article class="info-card">
-          <h3>Photos matter</h3>
-          <p>Front cap, rear, both sides, roof if safely available, awning, wheels, and problem-area photos help prevent quote surprises.</p>
+          <h3>Photos help</h3>
+          <p>Use the quote form to upload front, sides, roof, awning, wheels, and problem areas.</p>
         </article>
       </div>
     </div>
@@ -106,11 +101,11 @@ const serviceSchema = services.map((service) => ({
     <div class="container">
       <div class="section-kicker center">
         <p class="eyebrow">Service questions</p>
-        <h2>Answers before you request a quote.</h2>
+        <h2>Quick service answers.</h2>
       </div>
-      <FAQ items={faqs.slice(0, 7)} />
+      <FAQ items={faqs.slice(0, 5)} />
     </div>
   </section>
 
-  <CTASection title="Ready to quote the right RV detail?" text="Send the RV details and photos so the exterior care scope can be quoted accurately." />
+  <CTASection title="Ready for the right RV detail quote?" text="Start with the form. Upload photos there." />
 </BaseLayout>

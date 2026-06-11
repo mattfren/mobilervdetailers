@@ -101,10 +101,10 @@ Required implementation areas:
 2. Conversion optimization
 
 * Every page should have clear CTAs above the fold and near the bottom.
-* Use direct CTAs like “Get a Quote,” “Call Now,” “Text Photos,” and “View Packages.”
+* Use direct CTAs like “Request Quote,” “Call,” “Message on Facebook,” and “View Services.”
 * Quote CTAs should link to https://tally.so/r/xXvkqJ.
 * Phone CTAs should use tel:+19035024242.
-* If SMS links exist, use sms:+19035024242 where appropriate.
+* Do not use a separate SMS photo CTA; the quote form handles photo uploads.
 * Make the quote process obvious: details + photos → review → quote → scheduling.
 * Add or improve sections that reduce customer confusion before calling.
 

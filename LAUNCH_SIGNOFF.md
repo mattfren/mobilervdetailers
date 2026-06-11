@@ -32,7 +32,7 @@ Overall result: PASS for static website readiness. Production-domain cutover sti
 | Accessibility | PASS | One H1 per page, alt text present, skip link/focus styling present, CTAs accessible. |
 | SEO | PASS | Titles, descriptions, canonicals, Open Graph tags, JSON-LD, sitemap, and robots present. |
 | Performance | PASS | Public assets reduced to optimized set; raw originals no longer deploy. |
-| Conversion | PASS | Request Quote is the dominant action; secondary paths support photo collection and Messenger. |
+| Conversion | PASS | Request Quote is the dominant action; the quote form handles details and photos. Messenger remains a support path. |
 | Brand Quality | PASS | Visual system is consistent, premium, RV-specific, and not dependent on fake proof. |
 
 ## Signoff conditions

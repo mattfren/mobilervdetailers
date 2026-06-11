@@ -1,10 +1,10 @@
 ---
-import { getBookingAction, getQuoteAction, getTextAction, isConfiguredUrl, site } from "../data/site";
+import { getBookingAction, getMessengerAction, getQuoteAction, isConfiguredUrl, site } from "../data/site";
 import SocialLinks from "./SocialLinks.astro";
 
 const bookingAction = getBookingAction();
+const messengerAction = getMessengerAction();
 const quoteAction = getQuoteAction();
-const textAction = getTextAction();
 const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
 ---
 
@@ -12,19 +12,15 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src={site.images.logo} alt="Mobile RV Detailers" width="190" height="58" />
-      <p>
-        Premium mobile RV washing, wax soap and hand drying, roof cleaning, black streak removal,
-        and awning care based in Canton, TX.
-      </p>
+      <p>Mobile RV exterior washing, roof or awning care, black streak removal, and full exterior detail quotes based in Canton, TX.</p>
       <SocialLinks compact />
       <div class="footer-cta-row">
         <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-        <a class="btn btn-ghost" href={textAction.href}>{textAction.label}</a>
       </div>
     </div>
 
     <div>
-      <h2 class="footer-heading">Pages</h2>
+      <h2 class="footer-heading">Explore</h2>
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
@@ -33,21 +29,11 @@ const hasPaymentUrl = isConfiguredUrl(site.paymentUrl);
     </div>
 
     <div>
-      <h2 class="footer-heading">Services</h2>
-      <ul class="footer-links">
-        <li><a href="/services/#exterior-rv-wash">Exterior RV Wash</a></li>
-        <li><a href="/services/#roof-cleaning">Roof Cleaning</a></li>
-        <li><a href="/services/#black-streak-removal">Black Streak Removal</a></li>
-        <li><a href="/services/#wax-soap-hand-dry">Wax Soap & Hand Dry</a></li>
-      </ul>
-    </div>
-
-    <div>
       <h2 class="footer-heading">Contact</h2>
       <ul class="footer-links">
         <li><a href={site.phoneHref}>{site.phone}</a></li>
-        {isConfiguredUrl(site.facebookUrl) && <li><a href={site.facebookUrl} target="_blank" rel="noreferrer">Facebook</a></li>}
-        <li><a href="/service-areas/">Canton, TX</a></li>
+        <li><a href={messengerAction.href} target="_blank" rel="noreferrer">Facebook Messenger</a></li>
+        <li><a href="/service-areas/">Canton service area</a></li>
         <li><a href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a></li>
         {hasPaymentUrl && <li><a href={site.paymentUrl} target="_blank" rel="noreferrer">Pay Invoice</a></li>}
         <li><a href="/privacy/">Privacy</a></li>

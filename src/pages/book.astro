@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/CTASection.astro";
-import { getBookingAction, getMessengerAction, getQuoteAction, getTextAction, isConfiguredUrl, localBusinessJsonLd, site } from "../data/site";
+import { getBookingAction, getMessengerAction, getQuoteAction, isConfiguredUrl, localBusinessJsonLd, site } from "../data/site";
 
 const title = "Book Mobile RV Detailing | Mobile RV Detailers";
 const description =
@@ -12,7 +12,6 @@ const paymentExternal = hasPaymentUrl && site.paymentUrl.startsWith("http");
 const quoteAction = getQuoteAction();
 const bookingAction = getBookingAction();
 const messengerAction = getMessengerAction();
-const textAction = getTextAction();
 ---
 
 <BaseLayout title={title} description={description} path="/book" jsonLd={localBusinessJsonLd()}>
@@ -20,9 +19,7 @@ const textAction = getTextAction();
     <div class="container">
       <p class="eyebrow">Book</p>
       <h1>Quote first, then schedule.</h1>
-      <p>
-        Mobile RV Detailers confirms RV details, photos, location, service scope, route, and weather window before an appointment is set.
-      </p>
+      <p>Send the details, confirm the quote, then lock in the appointment.</p>
     </div>
   </section>
 
@@ -30,17 +27,16 @@ const textAction = getTextAction();
     <div class="container contact-grid">
       <article class="contact-card">
         <h2>Request a quote first</h2>
-        <p>Send the RV details, photos, service location, and water/electricity availability, then schedule the job once the scope is clear.</p>
+        <p>The quote form handles details, photos, location, and utilities.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={quoteAction.href} target={quoteAction.external ? "_blank" : undefined} rel={quoteAction.external ? "noreferrer" : undefined}>{quoteAction.label}</a>
-          <a class="btn btn-ghost" href={textAction.href}>{textAction.label}</a>
           <a class="btn btn-ghost" href={messengerAction.href} target="_blank" rel="noreferrer">{messengerAction.label}</a>
         </div>
       </article>
 
       <article class="contact-card">
         <h2>Schedule service</h2>
-        <p>There is no public self-scheduling calendar. Appointment timing is confirmed after the quote, access details, route, and weather window are reviewed.</p>
+        <p>Appointments are set after the quote, access, route, and weather window are reviewed.</p>
         <div class="contact-actions">
           <a class="btn btn-red" href={bookingAction.href} target={bookingAction.external ? "_blank" : undefined} rel={bookingAction.external ? "noreferrer" : undefined}>{bookingAction.label}</a>
         </div>
@@ -49,7 +45,7 @@ const textAction = getTextAction();
       {hasPaymentUrl && (
       <article class="contact-card">
         <h2>Pay invoice</h2>
-        <p>Use the external payment link only after an invoice or payment request has been issued.</p>
+        <p>Use this only after an invoice or payment request is issued.</p>
         <div class="contact-actions">
           <a class="btn btn-ghost" href={site.paymentUrl} target={paymentExternal ? "_blank" : undefined} rel={paymentExternal ? "noreferrer" : undefined}>Pay Invoice</a>
         </div>
@@ -58,7 +54,7 @@ const textAction = getTextAction();
 
       <article class="contact-card">
         <h2>Scheduling policy</h2>
-        <p>Deposit, cancellation, no-show, and refund details are confirmed before work is scheduled or paid.</p>
+        <p>Deposit, cancellation, and refund details are confirmed before scheduling.</p>
         <div class="contact-actions">
           <a class="btn btn-ghost" href="/terms/">View Terms</a>
         </div>
@@ -66,5 +62,5 @@ const textAction = getTextAction();
     </div>
   </section>
 
-  <CTASection title="Use the quote path for new RV service." text="Start with the RV details, photos, location, and services needed so scheduling can be confirmed cleanly." />
+  <CTASection title="Start with the quote." text="The form collects the details needed to schedule cleanly." />
 </BaseLayout>

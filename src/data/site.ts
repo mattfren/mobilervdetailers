@@ -116,12 +116,6 @@ export const getMessengerAction = () => ({
   external: true
 });
 
-export const getTextAction = () => ({
-  href: "sms:+19035024242",
-  label: "Text Photos",
-  external: false
-});
-
 export const getBookingAction = () => {
   const hasBookingUrl = !isTodoLink(site.bookingUrl);
   const href = hasBookingUrl ? site.bookingUrl : "/contact/";
