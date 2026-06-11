@@ -112,7 +112,7 @@ export const getQuoteAction = () => {
 
 export const getMessengerAction = () => ({
   href: site.messengerUrl,
-  label: "Message on Facebook",
+  label: "Messenger",
   external: true
 });
 

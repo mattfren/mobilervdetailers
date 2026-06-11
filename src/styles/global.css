@@ -367,7 +367,6 @@ p {
 
 .hero-copy {
   max-width: 780px;
-  animation: fadeUp 560ms ease both;
 }
 
 .hero h1 {
@@ -1840,6 +1839,42 @@ p {
   }
 }
 
+@media (max-width: 639px) {
+  h1 {
+    font-size: 2.2rem;
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: 1.85rem;
+    overflow-wrap: break-word;
+  }
+
+  .hero h1 {
+    max-width: 12ch;
+  }
+
+  .page-hero h1 {
+    max-width: 11ch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .cta-actions,
+  .contact-actions,
+  .trust-chips li {
+    width: 100%;
+  }
+
+  .hero-grid {
+    min-height: 600px;
+    padding-top: 3.7rem;
+  }
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 4.75rem;
@@ -1991,27 +2026,16 @@ p {
   }
 
   h1 {
-    font-size: 2.55rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
+  h2 {
+    font-size: 1.7rem;
+  }
+
   .hero-grid {
-    min-height: 620px;
+    min-height: 590px;
     padding-top: 3.8rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .hero-actions,
-  .cta-actions,
-  .contact-actions,
-  .trust-chips li {
-    width: 100%;
   }
 
   .service-map-card {
